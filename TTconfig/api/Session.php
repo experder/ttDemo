@@ -6,13 +6,13 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-/*
- * Server specific configuration
- *
- * Server: SERVERNAME
- *
- */
+namespace tt\api;
 
-\tt\database\Database::init('localhost', 'mytt', 'root', 'veryverysafe');
+class Session #extends \tt\api_default\Session
+{
 
-define('HTTP_SKIN', '/TTconfig/skin');
+	public static function getLoginHtml(){
+		return "Login Custom";
+	}
+
+}

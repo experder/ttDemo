@@ -1,0 +1,19 @@
+
+pre{
+	white-space: pre-wrap;
+}
+
+hr{
+	border:1px solid;
+	box-shadow:none;
+	/*TODO*/
+}
+
+pre.emergency_errormessage{
+	margin:10px 20px;
+	padding:10px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 15px #807f80;
+	background: #ffdde1;
+	color: #740000;
+}
