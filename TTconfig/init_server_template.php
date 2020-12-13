@@ -15,7 +15,7 @@
 
 \tt\database\Database::init('localhost', 'mytt', 'root', 'veryverysafe');
 
-define('HTTP_SKIN', '/TTconfig/skin');
+define('HTTP_SKIN', '/TTconfig/skins/skin1');
 
 /*
 \tt\config\Config::$DEVMODE = false;

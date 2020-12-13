@@ -1,23 +1,19 @@
 <?php
 /*
- * This file is part of the TT toolbox demo;
+ * This file is part of the TT toolbox;
  * Copyright (C) 2014-2021 Fabian Perder (t2@qnote.de) and contributors
  * TT comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-namespace tt\api;
+namespace ttdemo\demo;
 
-use tt\debug\Error;
-use tt\debug\Warning;
-use tt\page\Message;
-use tt\page\Page;
+use tt\controller\Controller;
 
-class Session extends \tt\api_default\Session
-{
+class DemoCss extends Controller {
 
-//	public static function getLoginHtml(){
-//		return "Login Custom";
-//	}
+	public function runWeb() {
+		return "<hr>DEMO CSS<hr>";
+	}
 
 }
