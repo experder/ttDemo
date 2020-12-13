@@ -8,10 +8,20 @@
 
 namespace tt\api;
 
+use tt\debug\Error;
+use tt\debug\Warning;
+use tt\page\Message;
+use tt\page\Page;
+
 class Session extends \tt\api_default\Session
 {
 
 	public static function getLoginHtml(){
+		$page = Page::init();
+		Page::addMessageText(Message::TYPE_INFO, "INFO1!");
+		new Warning("test");
+		Page::addMessageText(Message::TYPE_INFO, "INFO2!");
+		#$page->deliver();
 		return "Login Custom";
 	}
 
