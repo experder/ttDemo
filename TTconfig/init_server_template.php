@@ -7,7 +7,7 @@
  */
 
 /*
- * Server specific configuration
+ * Server specific settings
  *
  * Server: SERVERNAME
  *
@@ -16,3 +16,7 @@
 \tt\database\Database::init('localhost', 'mytt', 'root', 'veryverysafe');
 
 define('HTTP_SKIN', '/TTconfig/skin');
+
+/*
+\tt\config\Config::$DEVMODE = false;
+/**/
