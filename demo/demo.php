@@ -13,7 +13,7 @@ use tt\page\Page;
 
 require_once dirname(__DIR__).'/TToolbox/init_web.php';
 
-Page::addMessageText(Message::TYPE_INFO, "TOOO: API Autoloader");
-new DemoCss();
+$demo = new DemoCss();
 
-echo "!";
+Page::getInstance()->add($demo->runWeb());
+Page::getInstance()->deliver();

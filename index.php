@@ -10,6 +10,7 @@ namespace ttdemo;
 
 use tt\debug\Error;
 use tt\page\Page;
+use tt\run\Controller;
 
 #define('HTTP_SKIN', '/ttfabian/ttDemo/TTconfig/skins/skin1');
 #require_once __DIR__.'/TToolbox/debug/Error.php';
@@ -19,7 +20,7 @@ require_once __DIR__.'/TToolbox/init_web.php';
 
 echo "Hello world! ".time();
 
-echo " [<a href='/run/DemoCss'>CSS demo</a>]";//TODO: Routing
+echo " [".Controller::getLink('ttdemo\demo\DemoCss','CSS demo')."]";
 echo " [<a href='demo/demo.php'>demo.php</a>]";
 
 Page::getInstance()->deliver();

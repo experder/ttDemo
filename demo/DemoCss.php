@@ -8,7 +8,7 @@
 
 namespace ttdemo\demo;
 
-use tt\controller\Controller;
+use tt\run\Controller;
 
 class DemoCss extends Controller {
 
