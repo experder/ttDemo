@@ -1,10 +1,8 @@
 <?php
 
 require_once dirname(__DIR__).'/TToolbox/config/Config.php';
-#$config = \tt\config\Config::init();
+$config = \tt\config\Config::getInstance();
 /*
-
-TODO:static
 $config->setServerDir(__DIR__);
 $config->setServerFile(__DIR__."/init_server.php");
 $config->setProjectFile(__DIR__.'/init_project.php');
