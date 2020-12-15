@@ -9,7 +9,6 @@
 namespace tt\api;
 
 use tt\debug\Error;
-use tt\debug\Warning;
 use tt\page\Message;
 use tt\page\Page;
 
