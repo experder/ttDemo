@@ -6,6 +6,15 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
+/*
+
+TODO's:
+- Server config template ins verz installer
+  - pointer template auch?
+- Multiple autoloader flag in init_web
+
+ */
+
 namespace ttdemo;
 
 use tt\debug\Error;
@@ -20,7 +29,7 @@ require_once __DIR__.'/TToolbox/init_web.php';
 
 echo "Hello world! ".time();
 
-echo " [".Controller::getLink('ttdemo\demo\DemoCss','CSS demo')."]";
+echo " [".Controller::getWebLink('ttdemo\demo\DemoCss','CSS demo')."]";
 echo " [<a href='demo/demo.php'>demo.php</a>]";
 
 Page::getInstance()->deliver();
