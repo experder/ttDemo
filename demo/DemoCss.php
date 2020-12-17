@@ -24,18 +24,22 @@ class DemoCss extends Controller {
 
 	public function runWeb() {
 		$form = new Form();
-//TODO:Add some CSS
-		$form->addField(new FormfieldText("text1", "Text1"));
+		$form->addField(new FormfieldHidden("hidden", "value"));
+		$form->addField($ff=new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
+		$ff->setTooltip("Hint1");
 		$form->addField($fieldset=new Fieldset("Fieldset"));
 		$fieldset->addField(new FormfieldText("text2", "Text2"));
 		$fieldset->addField(new FormfieldPassword("password", "Password"));
-		$form->addField(new FormfieldCheckbox("checkbox", "Checkbox"));
+		$form->addField($ff=new FormfieldCheckbox("checkbox", "Checkbox"));
+		$ff->setTooltip("Hint2");
 		$form->addField(new FormfieldHeader("Header", "header"));
-		$form->addField(new FormfieldHidden("hidden", "value"));
+$form->addField(new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
+//TODO:CSS
 		$form->addField(new FormfieldRadio("radio", array(
 			new FormfieldRadioOption("value1", "Title1"),
 			new FormfieldRadioOption("value2", "Title2"),
 		), "Radio", "value2"));
+$form->addField(new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
 		$form->addField(new FormfieldTextarea("textarea", "Textarea"));
 
 		return $form;
