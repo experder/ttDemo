@@ -30,16 +30,13 @@ class DemoCss extends Controller {
 		$form->addField($fieldset=new Fieldset("Fieldset"));
 		$fieldset->addField(new FormfieldText("text2", "Text2"));
 		$fieldset->addField(new FormfieldPassword("password", "Password"));
+		$form->addField(new FormfieldHeader("Header", "header"));
 		$form->addField($ff=new FormfieldCheckbox("checkbox", "Checkbox"));
 		$ff->setTooltip("Hint2");
-		$form->addField(new FormfieldHeader("Header", "header"));
-$form->addField(new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
-//TODO:CSS
 		$form->addField(new FormfieldRadio("radio", array(
-			new FormfieldRadioOption("value1", "Title1"),
-			new FormfieldRadioOption("value2", "Title2"),
-		), "Radio", "value2"));
-$form->addField(new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
+			new FormfieldRadioOption("value1", "Option1", "Hint3"),
+			new FormfieldRadioOption("value2", "Option2"),
+		), "value2"));
 		$form->addField(new FormfieldTextarea("textarea", "Textarea"));
 
 		return $form;
