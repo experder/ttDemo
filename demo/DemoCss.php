@@ -18,25 +18,53 @@ use tt\html\form\FormfieldRadio;
 use tt\html\form\FormfieldRadioOption;
 use tt\html\form\FormfieldText;
 use tt\html\form\FormfieldTextarea;
+use tt\page\Message;
+use tt\page\Page;
 use tt\run\Controller;
 
 class DemoCss extends Controller {
 
 	public function runWeb() {
+		$html[]=array();
+
+		self::demoAlerts();
+		$html[] = self::demoForm();
+
+		return $html;
+	}
+
+	private function demoAlerts() {
+
+		Page::addMessageText(Message::TYPE_INFO, "Page::addMessageText(Message::TYPE_INFO, \$message);");
+		Page::addMessageText(Message::TYPE_QUESTION, "Page::addMessageText(Message::TYPE_QUESTION, \$message);");
+		Page::addMessageText(Message::TYPE_ERROR, "Page::addMessageText(Message::TYPE_ERROR, \$message);");
+		Page::addMessageText(Message::TYPE_CONFIRM, "Page::addMessageText(Message::TYPE_CONFIRM, \$message);");
+
+	}
+	
+	private function demoForm() {
+
 		$form = new Form();
+
 		$form->addField(new FormfieldHidden("hidden", "value"));
+
 		$form->addField($ff=new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
 		$ff->setTooltip("Hint1");
+
 		$form->addField($fieldset=new Fieldset("Fieldset"));
 		$fieldset->addField(new FormfieldText("text2", "Text2"));
 		$fieldset->addField(new FormfieldPassword("password", "Password"));
+
 		$form->addField(new FormfieldHeader("Header", "header"));
+
 		$form->addField($ff=new FormfieldCheckbox("checkbox", "Checkbox"));
 		$ff->setTooltip("Hint2");
+
 		$form->addField(new FormfieldRadio("radio", array(
 			new FormfieldRadioOption("value1", "Option1", "Hint3"),
 			new FormfieldRadioOption("value2", "Option2"),
 		), "value2"));
+
 		$form->addField(new FormfieldTextarea("textarea", "Textarea"));
 
 		return $form;
