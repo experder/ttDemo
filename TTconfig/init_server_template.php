@@ -1,4 +1,10 @@
 <?php
+/**TPLDOCSTART
+ * Template for the file "init_server.php".
+ * @see \tt\install\Installer
+ */
+if (true) exit;/*
+ * TPLDOCEND*/
 /*
  * Server specific settings
  *
@@ -6,16 +12,14 @@
  *
  */
 
-\tt\database\Database::init('localhost', 'mytt', 'root', 'veryverysafe');
+\tt\core\Database::init('localhost', 'mytt', 'root', 'veryverysafe');
 
-define('HTTP_RUN', '/TToolbox/run');
-define('HTTP_SKIN', '/TTconfig/skins/skin1');
-
-define('DIR_3RDPARTY', dirname(__DIR__).'/thirdparty');
-define('HTTP_3RDPARTY', '/thirdparty');
-
-\tt\config\Config::setPlatform(\tt\config\Config::PLATFORM_UNKNOWN);
+\tt\core\Config::set(\tt\core\Config::HTTP_ROOT, '/ttDemo');
 
 /*
-\tt\config\Config::$DEVMODE = false;
+\tt\core\Config::set(\tt\core\Config::HTTP_RUN, \tt\core\Config::get(\tt\core\Config::HTTP_ROOT).'/TToolbox/run');
+\tt\core\Config::set(\tt\core\Config::HTTP_SKIN, \tt\core\Config::get(\tt\core\Config::HTTP_ROOT).'/TTconfig/skins/skin1');
+\tt\core\Config::set(\tt\core\Config::HTTP_3RDPARTY, \tt\core\Config::get(\tt\core\Config::HTTP_ROOT).'/thirdparty');
+\tt\core\Config::set(\tt\core\Config::CFG_PLATFORM, \tt\core\Config::PLATFORM_UNKNOWN);
+\tt\core\Config::set(\tt\core\Config::DEVMODE, false);
 /**/
