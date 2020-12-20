@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__DIR__).'/TToolbox/config/Config.php';
-$config = \tt\config\Config::getInstance();
+require_once dirname(__DIR__).'/TToolbox/core/Config.php';
+$config = \tt\core\Config::getInstance();
 /*
 $config->setServerDir(__DIR__);
 $config->setServerFile(__DIR__."/init_server.php");
