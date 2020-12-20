@@ -1,11 +1,11 @@
 <?php
 
 require_once dirname(__DIR__).'/TToolbox/core/Config.php';
-$config = \tt\core\Config::getInstance();
+\tt\core\Config::set(\tt\core\Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 /*
-$config->setServerDir(__DIR__);
-$config->setServerFile(__DIR__."/init_server.php");
-$config->setProjectFile(__DIR__.'/init_project.php');
-$config->setProjectDir(dirname(__DIR__));
+\tt\core\Config::set(\tt\core\Config::CFG_PROJECT_DIR, dirname(__DIR__));
+\tt\core\Config::set(\tt\core\Config::CFG_DIR, __DIR__);
+\tt\core\Config::set(\tt\core\Config::CFG_SERVER_INIT_FILE, __DIR__.'/init_server.php');
+\tt\core\Config::set(\tt\core\Config::DIR_3RDPARTY, dirname(__DIR__).'/thirdparty');
 /**/
-$config->startWeb();
+\tt\core\Config::startWeb();
