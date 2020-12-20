@@ -8,11 +8,7 @@
 
 namespace tt\api;
 
-use tt\debug\Error;
-use tt\page\Message;
-use tt\page\Page;
-
-class Session extends \tt\api_default\Session
+class Session extends \tt\core\api_default\Session
 {
 
 //	public static function getLoginHtml(){

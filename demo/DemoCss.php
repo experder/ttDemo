@@ -18,8 +18,8 @@ use tt\html\form\FormfieldRadio;
 use tt\html\form\FormfieldRadioOption;
 use tt\html\form\FormfieldText;
 use tt\html\form\FormfieldTextarea;
-use tt\page\Message;
-use tt\page\Page;
+use tt\core\page\Message;
+use tt\core\page\Page;
 use tt\run\Controller;
 
 class DemoCss extends Controller {

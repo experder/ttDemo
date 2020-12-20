@@ -18,7 +18,7 @@ TODO's:
 namespace ttdemo;
 
 use tt\install\Installer;
-use tt\page\Page;
+use tt\core\page\Page;
 use tt\run\Controller;
 
 #define('HTTP_SKIN', '/ttfabian/ttDemo/TTconfig/skins/skin1');

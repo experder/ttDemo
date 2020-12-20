@@ -8,8 +8,7 @@
 
 namespace ttdemo\demo;
 
-use tt\page\Message;
-use tt\page\Page;
+use tt\core\page\Page;
 
 require_once dirname(__DIR__).'/TTconfig/init_web.php';
 
