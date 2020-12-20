@@ -17,6 +17,7 @@ TODO's:
 
 namespace ttdemo;
 
+use tt\install\Installer;
 use tt\page\Page;
 use tt\run\Controller;
 
@@ -24,7 +25,10 @@ use tt\run\Controller;
 #require_once __DIR__.'/TToolbox/debug/Error.php';
 #new Error("!");
 
-require_once __DIR__.'/TTconfig/init_web.php';
+#require_once __DIR__.'/TTconfig/init_web.php';
+require_once __DIR__.'/TToolbox/install/Installer.php';
+Installer::requireWebPointer();
+
 
 echo "Hello world! ".time();
 
