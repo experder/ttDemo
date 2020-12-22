@@ -20,6 +20,7 @@ use tt\html\form\FormfieldText;
 use tt\html\form\FormfieldTextarea;
 use tt\core\page\Message;
 use tt\core\page\Page;
+use tt\html\Html;
 use tt\run\Controller;
 
 class DemoCss extends Controller {
@@ -28,6 +29,7 @@ class DemoCss extends Controller {
 		$html[]=array();
 
 		self::demoAlerts();
+		$html[] = self::demoText();
 		$html[] = self::demoForm();
 
 		return $html;
@@ -40,6 +42,17 @@ class DemoCss extends Controller {
 		Page::addMessageText(Message::TYPE_ERROR, "Page::addMessageText(Message::TYPE_ERROR, \$message);");
 		Page::addMessageText(Message::TYPE_CONFIRM, "Page::addMessageText(Message::TYPE_CONFIRM, \$message);");
 
+	}
+
+	private function demoText() {
+		$html = array();
+
+		$html[] = Html::H1("Header 1");
+		$html[] = Html::H2("Header 2");
+		$html[] = Html::H3("Header 3");
+		$html[] = Html::H4("Header 4");
+
+		return $html;
 	}
 	
 	private function demoForm() {
