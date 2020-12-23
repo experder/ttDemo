@@ -8,6 +8,7 @@
 
 namespace ttdemo\demo;
 
+use tt\core\page\Message;
 use tt\core\page\PG;
 use tt\html\form\Fieldset;
 use tt\html\form\Form;
@@ -19,7 +20,6 @@ use tt\html\form\FormfieldRadio;
 use tt\html\form\FormfieldRadioOption;
 use tt\html\form\FormfieldText;
 use tt\html\form\FormfieldTextarea;
-use tt\core\page\Message;
 use tt\html\Html;
 use tt\run\Controller;
 
@@ -61,24 +61,26 @@ class DemoCss extends Controller {
 
 		$form->addField(new FormfieldHidden("hidden", "value"));
 
-		$form->addField($ff=new FormfieldText("text1", "Text1", null, true, array("placeholder"=>"Text1")));
+		$form->addField($ff = new FormfieldText("text", "Text"));
 		$ff->setTooltip("Hint1");
 
 		$form->addField($fieldset=new Fieldset("Fieldset"));
-		$fieldset->addField(new FormfieldText("text2", "Text2"));
 		$fieldset->addField(new FormfieldPassword("password", "Password"));
 
 		$form->addField(new FormfieldHeader("Header", "header"));
 
-		$form->addField($ff=new FormfieldCheckbox("checkbox", "Checkbox"));
+		$form->addField($ff=new FormfieldCheckbox("checkbox1", "Checkbox1"));
 		$ff->setTooltip("Hint2");
+		$form->addField(new FormfieldCheckbox("checkbox2", "Checkbox2"));
 
 		$form->addField(new FormfieldRadio("radio", array(
 			new FormfieldRadioOption("value1", "Option1", "Hint3"),
 			new FormfieldRadioOption("value2", "Option2"),
 		), "value2"));
 
-		$form->addField(new FormfieldTextarea("textarea", "Textarea"));
+		$form->addField(new FormfieldTextarea("textarea", "Textarea", null, true,
+			array("placeholder" => "Placeholder")
+		));
 
 		return $form;
 	}
