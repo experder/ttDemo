@@ -8,8 +8,7 @@
 
 namespace tt\api;
 
-class Session extends \tt\core\api_default\Session
-{
+class Session extends \tt\core\api_default\Session {
 
 //	public static function getLoginHtml(){
 //		return "Login Custom";

@@ -8,8 +8,8 @@
 
 namespace ttdemo;
 
-use tt\install\Installer;
 use tt\core\page\Page;
+use tt\install\Installer;
 use tt\run\Controller;
 
 #define('HTTP_SKIN', '/ttfabian/ttDemo/TTconfig/skins/skin1');
@@ -17,13 +17,13 @@ use tt\run\Controller;
 #new Error("!");
 
 #require_once __DIR__.'/TTconfig/init_web.php';
-require_once __DIR__.'/TToolbox/install/Installer.php';
+require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireWebPointer();
 
 
-echo "Hello world! ".time();
+echo "Hello world! " . time();
 
-echo " [".Controller::getWebLink('ttdemo\demo\DemoCss','CSS demo')."]";
+echo " [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]";
 echo " [<a href='demo/demo.php'>demo.php</a>]";
 
 Page::getInstance()->deliver();

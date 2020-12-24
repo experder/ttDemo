@@ -20,13 +20,13 @@ use tt\html\form\FormfieldRadio;
 use tt\html\form\FormfieldRadioOption;
 use tt\html\form\FormfieldText;
 use tt\html\form\FormfieldTextarea;
-use tt\service\Html;
 use tt\run\Controller;
+use tt\service\Html;
 
 class DemoCss extends Controller {
 
 	public function runWeb() {
-		$html[]=array();
+		$html[] = array();
 
 		self::demoAlerts();
 		$html[] = self::demoText();
@@ -54,7 +54,7 @@ class DemoCss extends Controller {
 
 		return $html;
 	}
-	
+
 	private function demoForm() {
 
 		$form = new Form();
@@ -64,12 +64,12 @@ class DemoCss extends Controller {
 		$form->addField($ff = new FormfieldText("text", "Text"));
 		$ff->setTooltip("Hint1");
 
-		$form->addField($fieldset=new Fieldset("Fieldset"));
+		$form->addField($fieldset = new Fieldset("Fieldset"));
 		$fieldset->addField(new FormfieldPassword("password", "Password"));
 
 		$form->addField(new FormfieldHeader("Header", "header"));
 
-		$form->addField($ff=new FormfieldCheckbox("checkbox1", "Checkbox1"));
+		$form->addField($ff = new FormfieldCheckbox("checkbox1", "Checkbox1"));
 		$ff->setTooltip("Hint2");
 		$form->addField(new FormfieldCheckbox("checkbox2", "Checkbox2"));
 
