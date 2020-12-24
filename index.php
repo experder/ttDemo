@@ -6,15 +6,6 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-/*
-
-TODO's:
-- Server config template ins verz installer
-  - pointer template auch?
-- Multiple autoloader flag in init_web
-
- */
-
 namespace ttdemo;
 
 use tt\install\Installer;
