@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__).'/TToolbox'.'/core/Config.php';
+require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
 \tt\core\Config::set(\tt\core\Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 \tt\core\Config::set(\tt\core\Config::CFG_DIR, __DIR__);
 /*
