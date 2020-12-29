@@ -8,13 +8,11 @@
 
 namespace ttdemo;
 
-use tt\core\page\Page;
+use tt\core\page\PG;
 use tt\install\Installer;
 use tt\run\Controller;
-
-#define('HTTP_SKIN', '/ttfabian/ttDemo/TTconfig/skins/skin1');
-#require_once __DIR__.'/TToolbox/debug/Error.php';
-#new Error("!");
+use tt\service\form\Form;
+use tt\service\form\FormfieldHidden;
 
 #require_once __DIR__.'/TTconfig/init_web.php';
 require_once __DIR__ . '/TToolbox/install/Installer.php';
@@ -24,6 +22,10 @@ Installer::requireWebPointer();
 echo "Hello world! " . time();
 
 echo " [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]";
-echo " [<a href='demo/demo.php'>demo.php</a>]";
 
-Page::getInstance()->deliver();
+$form = new Form("test1", "TToolbox/run_api/", "Ajax demo");
+$form->addField(new FormfieldHidden("class", "tt\\run_api\\Ajax"));
+$form->addField(new FormfieldHidden("a", "b"));
+echo $form;
+
+PG::deliver();
