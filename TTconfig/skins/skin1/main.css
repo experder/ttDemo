@@ -112,7 +112,9 @@ div.form_field.ff_header label {
 	display: none;
 }
 
-input[type=submit] {
+input[type=submit],
+input[type=button]
+{
 	color: #333;
 	background-color: #fff;
 	border: 1px solid #ccc;
@@ -121,10 +123,17 @@ input[type=submit] {
 	padding: 6px 12px;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover,
+input[type=button]:hover
+{
 	background-color: #e6e6e6;
 	border-color: #adadad;
 }
+
+form div.buttons > *{
+	margin-right:10px;
+}
+
 
 /*==================================================================
     MESSAGES

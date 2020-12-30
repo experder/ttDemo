@@ -8,24 +8,28 @@
 
 namespace ttdemo;
 
+use tt\core\Config;
+use tt\core\page\Page;
 use tt\core\page\PG;
 use tt\install\Installer;
 use tt\run\Controller;
 use tt\service\form\Form;
-use tt\service\form\FormfieldHidden;
+use tt\service\form\FormfieldText;
+use tt\service\js\Js;
 
 #require_once __DIR__.'/TTconfig/init_web.php';
 require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireWebPointer();
 
 
-echo "Hello world! " . time();
+PG::add(" [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]");
 
-echo " [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]";
+$form = new Form(null, "", "Ajax Test #1", "get", array(
+	"onsubmit"=>(Js::ajaxPostToMessages("html",null,null,"{cmd:'test1',foo:'bar',key1:$('#key1').val()}"))."return false;",
+));
+$form->addField(new FormfieldText("key1",null,null,true,array("id"=>"key1")));
+PG::add($form);
 
-$form = new Form("test1", "TToolbox/run_api/", "Ajax demo");
-$form->addField(new FormfieldHidden("class", "tt\\run_api\\Ajax"));
-$form->addField(new FormfieldHidden("a", "b"));
-echo $form;
+#Page::getInstance()->addJs("https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js");
 
 PG::deliver();
