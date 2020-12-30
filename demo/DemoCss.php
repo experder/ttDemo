@@ -37,10 +37,10 @@ class DemoCss extends Controller {
 
 	private function demoAlerts() {
 
-		PG::addMessageText(Message::TYPE_INFO, "Page::addMessageText(Message::TYPE_INFO, \$message);");
-		PG::addMessageText(Message::TYPE_QUESTION, "Page::addMessageText(Message::TYPE_QUESTION, \$message);");
-		PG::addMessageText(Message::TYPE_ERROR, "Page::addMessageText(Message::TYPE_ERROR, \$message);");
-		PG::addMessageText(Message::TYPE_CONFIRM, "Page::addMessageText(Message::TYPE_CONFIRM, \$message);");
+		PG::addMessageText(Message::TYPE_INFO, "PG::addMessageText(Message::TYPE_INFO, \$message);");
+		PG::addMessageText(Message::TYPE_QUESTION, "PG::addMessageText(Message::TYPE_QUESTION, \$message);");
+		PG::addMessageText(Message::TYPE_ERROR, "PG::addMessageText(Message::TYPE_ERROR, \$message);");
+		PG::addMessageText(Message::TYPE_CONFIRM, "PG::addMessageText(Message::TYPE_CONFIRM, \$message);");
 
 	}
 
