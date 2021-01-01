@@ -9,7 +9,7 @@
 namespace ttdemo\demo;
 
 use tt\core\page\Message;
-use tt\core\page\PG;
+use tt\core\page\Page;
 use tt\service\form\Fieldset;
 use tt\service\form\Form;
 use tt\service\form\FormfieldCheckbox;
@@ -37,10 +37,10 @@ class DemoCss extends Controller {
 
 	private function demoAlerts() {
 
-		PG::addMessageText(Message::TYPE_INFO, "PG::addMessageText(Message::TYPE_INFO, \$message);");
-		PG::addMessageText(Message::TYPE_QUESTION, "PG::addMessageText(Message::TYPE_QUESTION, \$message);");
-		PG::addMessageText(Message::TYPE_ERROR, "PG::addMessageText(Message::TYPE_ERROR, \$message);");
-		PG::addMessageText(Message::TYPE_CONFIRM, "PG::addMessageText(Message::TYPE_CONFIRM, \$message);");
+		Page::addMessageText(Message::TYPE_INFO, "PG::addMessageText(Message::TYPE_INFO, \$message);");
+		Page::addMessageText(Message::TYPE_QUESTION, "PG::addMessageText(Message::TYPE_QUESTION, \$message);");
+		Page::addMessageText(Message::TYPE_ERROR, "PG::addMessageText(Message::TYPE_ERROR, \$message);");
+		Page::addMessageText(Message::TYPE_CONFIRM, "PG::addMessageText(Message::TYPE_CONFIRM, \$message);");
 
 	}
 
