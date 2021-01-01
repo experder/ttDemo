@@ -8,13 +8,17 @@
 
 namespace ttdemo;
 
+use tt\config\Init;
 use tt\core\page\PG;
 use tt\install\Installer;
 use tt\run\Controller;
 
-#require_once __DIR__.'/TTconfig/init_web.php';
+#require_once __DIR__.'/TTconfig/Init.php';
+
 require_once __DIR__ . '/TToolbox/install/Installer.php';
-Installer::requireWebPointer();
+Installer::requireInitPointer();
+
+Init::initWeb();
 
 
 PG::add(" [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]");
