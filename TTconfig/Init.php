@@ -2,11 +2,12 @@
 
 namespace tt\config;
 
+require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
+
 class Init {
 
-	private static function loadConfig() {
+	public static function loadConfig() {
 
-		require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
 		\tt\core\Config::set(\tt\core\Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 		\tt\core\Config::set(\tt\core\Config::CFG_DIR, __DIR__);
 		/*
@@ -19,16 +20,6 @@ class Init {
 		#require_once dirname(__DIR__) . '/TToolbox'.'/core/Autoloader.php';
 		#\tt\core\Autoloader::multipleAutoloader();
 
-	}
-
-	public static function initWeb() {
-		self::loadConfig();
-		\tt\core\Config::startWeb();
-	}
-
-	public static function initAjax() {
-		self::loadConfig();
-		\tt\core\Config::startAjax();
 	}
 
 }
