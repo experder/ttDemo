@@ -12,8 +12,8 @@ use tt\run_cli\RunApi;
 
 class DemoCliRun extends RunApi {
 
-	public function runCli(){
-		return "You said: ".print_r($this->data, 1);
+	public function runCli() {
+		return "You said: " . print_r($this->data, 1);
 	}
 
 }
