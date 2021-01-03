@@ -19,16 +19,15 @@ class DemoAjax extends Controller {
 
 	protected function runWeb() {
 
-		$form = new Form(null, "", "Ajax Test #1", "get", array(
-			"onsubmit" => "t2_spinner_start();".(Js::ajaxPostToMessages(null, null, "{
+		$form = new Form(null, "", "Ajax Test #1");
+		$form->onSubmit.=(Js::ajaxPostToMessages(null, null, "{
 			class:'ttdemo\\\\demo\\\\DemoAjaxApi',
 			cmd:'test1',
 			foo:'bar',
 			key1:$('#key1').val(),
 			msg_type:$('input[name=type]:checked').val(),
 		}"))
-				. "return false;",
-		));
+			. "return false;";
 		$form->addField(new FormfieldText("key1", null, null, true, array("id" => "key1")));
 		$form->addField(new FormfieldRadio("type", array(
 			new FormfieldRadioOption("info"),
