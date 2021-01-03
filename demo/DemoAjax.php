@@ -20,7 +20,7 @@ class DemoAjax extends Controller {
 	protected function runWeb() {
 
 		$form = new Form(null, "", "Ajax Test #1", "get", array(
-			"onsubmit" => (Js::ajaxPostToMessages(null, null, "{
+			"onsubmit" => "t2_spinner_start();".(Js::ajaxPostToMessages(null, null, "{
 			class:'ttdemo\\\\demo\\\\DemoAjaxApi',
 			cmd:'test1',
 			foo:'bar',
