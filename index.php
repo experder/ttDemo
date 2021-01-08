@@ -18,7 +18,7 @@ use tt\run\Controller;
 require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireInitPointer();
 
-Config::startWeb();
+Config::startWeb2('ttdemo_index');
 
 
 PG::add(" [" . Controller::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]");
