@@ -15,16 +15,21 @@ use tt\service\Error;
 
 class DemoAjaxApi extends Runner {
 
+	const CMD_test1 = "test1";
+
 	public static function getClass() {
 		return \tt\service\polyfill\Php5::get_class();
 	}
 
 	public function runApi($cmd = null, array $data = array()) {
 		switch ($cmd) {
-			case "test1":
+			case self::CMD_test1:
+				$this->requiredFieldsFromData($data, array(DemoAjax::AJAXKEY_key1, 'foo'));
+				$response = "KEY1: ".htmlentities($data[DemoAjax::AJAXKEY_key1])."\n";
+				unset($data[DemoAjax::AJAXKEY_key1]);
 				return new ApiResponseHtml(
 					true,
-					"You have sent:<pre>" . htmlentities(print_r($data, 1)) . "</pre>",
+					"You have sent:<pre>" .$response. htmlentities(print_r($data, 1)) . "</pre>",
 					array(),
 					isset($data["msg_type"]) ? $data["msg_type"] : Message::TYPE_INFO
 				);

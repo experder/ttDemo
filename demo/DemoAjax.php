@@ -18,6 +18,9 @@ use tt\service\ServiceStrings;
 
 class DemoAjax extends Runner {
 
+	const HTMLID_key1 = "key1";
+	const AJAXKEY_key1 = "key1";
+
 	public static function getClass() {
 		return \tt\service\polyfill\Php5::get_class();
 	}
@@ -27,13 +30,13 @@ class DemoAjax extends Runner {
 		$form = new Form(null, "", "Ajax Test #1");
 		$form->onSubmit .= (Js::ajaxPostToMessages(null, null, "{
 			class:'".ServiceStrings::escape_value_js(DemoAjaxApi::getClass())."',
-			cmd:'test1',
-			foo:'bar',
-			key1:$('#key1').val(),
+			cmd:'".DemoAjaxApi::CMD_test1."',
+			foo:'".ServiceStrings::escape_value_js("bar")."',
+			".self::AJAXKEY_key1.":$('#".self::HTMLID_key1."').val(),
 			msg_type:$('input[name=type]:checked').val(),
 		}"))
 			. "return false;";
-		$form->addField(new FormfieldText("key1", null, null, true, array("id" => "key1")));
+		$form->addField(new FormfieldText("key1", null, null, true, array("id" => self::HTMLID_key1)));
 		$form->addField(new FormfieldRadio("type", array(
 			new FormfieldRadioOption("info"),
 			new FormfieldRadioOption("error"),
