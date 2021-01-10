@@ -13,17 +13,21 @@ use tt\service\Error;
 
 class DemoAjaxApi extends Runner {
 
-	public function runApi($cmd = null, array $data = array()){
+	public static function getClass() {
+		return \tt\service\polyfill\Php5::get_class();
+	}
+
+	public function runApi($cmd = null, array $data = array()) {
 		switch ($cmd) {
 			case "test1":
 				return array(
 					"ok" => true,
-					"html" => "You have sent:<pre>" . print_r($data, 1) . "</pre>",
+					"html" => "You have sent:<pre>" . htmlentities(print_r($data, 1)) . "</pre>",
 					"msg_type" => isset($data["msg_type"]) ? $data["msg_type"] : "info",
 				);
 				break;
 			default:
-				new Error(get_class($this) . ": Unknown command".($cmd===null?" (null)":" '$cmd'")."!");
+				new Error(get_class($this) . ": Unknown command" . ($cmd === null ? " (null)" : " '$cmd'") . "!");
 				return null;
 				break;
 		}

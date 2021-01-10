@@ -14,6 +14,7 @@ use tt\service\form\FormfieldRadio;
 use tt\service\form\FormfieldRadioOption;
 use tt\service\form\FormfieldText;
 use tt\service\js\Js;
+use tt\service\ServiceStrings;
 
 class DemoAjax extends Runner {
 
@@ -21,11 +22,11 @@ class DemoAjax extends Runner {
 		return \tt\service\polyfill\Php5::get_class();
 	}
 
-	public function runWeb(){
+	public function runWeb() {
 
 		$form = new Form(null, "", "Ajax Test #1");
 		$form->onSubmit .= (Js::ajaxPostToMessages(null, null, "{
-			class:'ttdemo\\\\demo\\\\DemoAjaxApi',
+			class:'".ServiceStrings::escape_value_js(DemoAjaxApi::getClass())."',
 			cmd:'test1',
 			foo:'bar',
 			key1:$('#key1').val(),

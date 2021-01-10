@@ -29,7 +29,7 @@ class DemoCss extends Runner {
 		return \tt\service\polyfill\Php5::get_class();
 	}
 
-	public function runWeb(){
+	public function runWeb() {
 		$html[] = array();
 
 		self::demoAlerts();

@@ -12,7 +12,7 @@ use tt\run\Runner;
 
 class DemoCliRun extends Runner {
 
-	public function runCli(array $data=array()) {
+	public function runCli(array $data = array()) {
 		return "You said: " . print_r($data, 1);
 	}
 
