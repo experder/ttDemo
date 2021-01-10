@@ -12,6 +12,8 @@ use tt\core\Config;
 use tt\core\page\PG;
 use tt\install\Installer;
 use tt\run\Run;
+use ttdemo\demo\DemoAjax;
+use ttdemo\demo\DemoCss;
 
 #require_once __DIR__.'/TTconfig/Init.php';
 
@@ -21,9 +23,9 @@ Installer::requireInitPointer();
 Config::startWeb('ttdemo_index');
 
 
-PG::add(" [" . Run::getWebLink('ttdemo\demo\DemoCss', 'CSS demo') . "]");
+PG::add(" [" . Run::getWebLink(DemoCss::getClass(), 'CSS demo') . "]");
 
-PG::add(" [" . Run::getWebLink('ttdemo\demo\DemoAjax', 'Ajax demo') . "]");
+PG::add(" [" . Run::getWebLink(DemoAjax::getClass(), 'Ajax demo') . "]");
 
 
 PG::deliver();

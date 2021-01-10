@@ -25,6 +25,10 @@ use tt\service\Html;
 
 class DemoCss extends Runner {
 
+	public static function getClass() {
+		return \tt\service\polyfill\Php5::get_class();
+	}
+
 	public function runWeb(){
 		$html[] = array();
 

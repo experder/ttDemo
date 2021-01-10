@@ -17,6 +17,10 @@ use tt\service\js\Js;
 
 class DemoAjax extends Runner {
 
+	public static function getClass() {
+		return \tt\service\polyfill\Php5::get_class();
+	}
+
 	public function runWeb(){
 
 		$form = new Form(null, "", "Ajax Test #1");
