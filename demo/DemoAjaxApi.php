@@ -8,6 +8,8 @@
 
 namespace ttdemo\demo;
 
+use tt\core\page\Message;
+use tt\run\ApiResponseHtml;
 use tt\run\Runner;
 use tt\service\Error;
 
@@ -20,10 +22,11 @@ class DemoAjaxApi extends Runner {
 	public function runApi($cmd = null, array $data = array()) {
 		switch ($cmd) {
 			case "test1":
-				return array(
-					"ok" => true,
-					"html" => "You have sent:<pre>" . htmlentities(print_r($data, 1)) . "</pre>",
-					"msg_type" => isset($data["msg_type"]) ? $data["msg_type"] : "info",
+				return new ApiResponseHtml(
+					true,
+					"You have sent:<pre>" . htmlentities(print_r($data, 1)) . "</pre>",
+					array(),
+					isset($data["msg_type"]) ? $data["msg_type"] : Message::TYPE_INFO
 				);
 				break;
 			default:
