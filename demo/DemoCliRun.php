@@ -8,12 +8,12 @@
 
 namespace ttdemo\demo;
 
-use tt\run_cli\RunApi;
+use tt\run\Runner;
 
-class DemoCliRun extends RunApi {
+class DemoCliRun extends Runner {
 
-	public function runCli() {
-		return "You said: " . print_r($this->data, 1);
+	public function runCli(array $data=array()) {
+		return "You said: " . print_r($data, 1);
 	}
 
 }

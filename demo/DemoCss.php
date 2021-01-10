@@ -10,6 +10,7 @@ namespace ttdemo\demo;
 
 use tt\core\page\Message;
 use tt\core\page\Page;
+use tt\run\Runner;
 use tt\service\form\Fieldset;
 use tt\service\form\Form;
 use tt\service\form\FormfieldCheckbox;
@@ -20,12 +21,11 @@ use tt\service\form\FormfieldRadio;
 use tt\service\form\FormfieldRadioOption;
 use tt\service\form\FormfieldText;
 use tt\service\form\FormfieldTextarea;
-use tt\run\Controller;
 use tt\service\Html;
 
-class DemoCss extends Controller {
+class DemoCss extends Runner {
 
-	protected function runWeb() {
+	public function runWeb(){
 		$html[] = array();
 
 		self::demoAlerts();

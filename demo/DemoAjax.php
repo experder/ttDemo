@@ -8,16 +8,16 @@
 
 namespace ttdemo\demo;
 
+use tt\run\Runner;
 use tt\service\form\Form;
 use tt\service\form\FormfieldRadio;
 use tt\service\form\FormfieldRadioOption;
 use tt\service\form\FormfieldText;
-use tt\run\Controller;
 use tt\service\js\Js;
 
-class DemoAjax extends Controller {
+class DemoAjax extends Runner {
 
-	protected function runWeb() {
+	public function runWeb(){
 
 		$form = new Form(null, "", "Ajax Test #1");
 		$form->onSubmit .= (Js::ajaxPostToMessages(null, null, "{

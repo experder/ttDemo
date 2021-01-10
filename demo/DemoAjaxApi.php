@@ -8,20 +8,22 @@
 
 namespace ttdemo\demo;
 
-use tt\run_api\Ajax;
+use tt\run\Runner;
+use tt\service\Error;
 
-class DemoAjaxApi extends Ajax {
+class DemoAjaxApi extends Runner {
 
-	protected function runCmd() {
-		switch ($this->cmd) {
+	public function runApi($cmd = null, array $data = array()){
+		switch ($cmd) {
 			case "test1":
 				return array(
 					"ok" => true,
-					"html" => "You have sent:<pre>" . print_r($this->data, 1) . "</pre>",
-					"msg_type" => isset($this->data["msg_type"]) ? $this->data["msg_type"] : "info",
+					"html" => "You have sent:<pre>" . print_r($data, 1) . "</pre>",
+					"msg_type" => isset($data["msg_type"]) ? $data["msg_type"] : "info",
 				);
 				break;
 			default:
+				new Error(get_class($this) . ": Unknown command".($cmd===null?" (null)":" '$cmd'")."!");
 				return null;
 				break;
 		}
