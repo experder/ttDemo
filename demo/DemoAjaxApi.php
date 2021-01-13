@@ -25,11 +25,22 @@ class DemoAjaxApi extends Runner {
 		switch ($cmd) {
 			case self::CMD_test1:
 				$this->requiredFieldsFromData($data, array(DemoAjax::AJAXKEY_key1, 'foo'));
-				$response = "KEY1: ".htmlentities($data[DemoAjax::AJAXKEY_key1])."\n";
+				$key1 = $data[DemoAjax::AJAXKEY_key1];
 				unset($data[DemoAjax::AJAXKEY_key1]);
+
+				$response = "You have sent:<pre>"
+					. "KEY1: " . htmlentities($key1) . "\n"
+					. htmlentities(print_r($data, 1))
+					. "</pre>";
+
+//				if(mb_strtolower($key1)=='drop'){
+//					\tt\core\database\Database::getPrimary()->_query("DROP DATABASE `tt_dev`;");
+//					$response="dropped!";
+//				}
+
 				return new ApiResponseHtml(
 					true,
-					"You have sent:<pre>" .$response. htmlentities(print_r($data, 1)) . "</pre>",
+					$response,
 					array(),
 					isset($data["msg_type"]) ? $data["msg_type"] : Message::TYPE_INFO
 				);
