@@ -8,6 +8,8 @@
 
 namespace ttdemo\demo;
 
+use tt\classes\moduleapi\UpdateDatabase;
+use tt\core\Config;
 use tt\core\page\Message;
 use tt\run\ApiResponseHtml;
 use tt\run\Runner;
@@ -33,10 +35,9 @@ class DemoAjaxApi extends Runner {
 					. htmlentities(print_r($data, 1))
 					. "</pre>";
 
-//				if(mb_strtolower($key1)=='drop'){
-//					\tt\core\database\Database::getPrimary()->_query("DROP DATABASE `tt_dev`;");
-//					$response="dropped!";
-//				}
+				if(Config::get(Config::DEVMODE)){
+					$response = $this->developmentCommands(mb_strtolower($key1))?:$response;
+				}
 
 				return new ApiResponseHtml(
 					true,
@@ -50,6 +51,23 @@ class DemoAjaxApi extends Runner {
 				return null;
 				break;
 		}
+	}
+
+	private function developmentCommands($cmd){
+
+		//Test database initialisation
+		if ($cmd == 'drop') {
+			\tt\core\database\Database::getPrimary()->_query("DROP DATABASE `tt_dev`;");
+			return "dropped!";
+		}
+
+		//Until this is available via gui:
+		if ($cmd == 'update') {
+			$responses = UpdateDatabase::updateAll();
+			return "updated!<pre>".print_r($responses,1)."</pre>";
+		}
+
+		return false;
 	}
 
 }
