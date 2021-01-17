@@ -8,7 +8,7 @@
 
 namespace ttdemo\demo;
 
-use tt\classes\moduleapi\UpdateDatabase;
+use tt\moduleapi\UpdateDatabase;
 use tt\core\Config;
 use tt\core\page\Message;
 use tt\run\ApiResponseHtml;
