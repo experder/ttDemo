@@ -35,7 +35,7 @@ class DemoAjaxApi extends Runner {
 					. htmlentities(print_r($data, 1))
 					. "</pre>";
 
-				if(Config::get(Config::DEVMODE)){
+				if(Config::get2(Config::DEVMODE)){
 					$response = $this->developmentCommands(mb_strtolower($key1))?:$response;
 				}
 
