@@ -17,6 +17,7 @@ div.inner_body {
 }
 
 pre {
+	font-family: monospace;
 	margin: 0;
 	white-space: pre-wrap;
 }
@@ -232,4 +233,13 @@ div.spinnerContent {
 	background-repeat: no-repeat;
 	background-position: center 10px;
 	padding-top: 47px;
+}
+
+/*==================================================================
+    DEBUG / STATS
+==================================================================*/
+
+div.tt_stats div.statsQueries{
+	font-family: monospace;
+	white-space: pre-wrap;
 }
