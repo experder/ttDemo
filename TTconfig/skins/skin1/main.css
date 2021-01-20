@@ -239,7 +239,43 @@ div.spinnerContent {
     DEBUG / STATS
 ==================================================================*/
 
+div.tt_stats{
+	margin-top:15px;
+}
+div.tt_stats div.statsBtn{
+	display: inline-block;
+	margin-right:5px;
+}
+div.tt_stats div.statsBtn.expand{
+	cursor:zoom-in;
+}
+div.tt_stats > div.statsBtn + div{
+	display:none;
+}
+div.tt_stats div.statsContent{
+	max-height: 400px;
+	overflow: auto;
+	display: inline-block;
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 10px 15px;
+}
+
 div.tt_stats div.statsQueries{
 	font-family: monospace;
 	white-space: pre-wrap;
+	padding: 0;
+}
+div.tt_stats div.statsQueries div{
+	padding: 0 15px;
+}
+div.tt_stats div.statsQueries div:first-child{
+	margin-top:10px;
+}
+div.tt_stats div.statsQueries div:last-child{
+	margin-bottom:10px;
+}
+div.tt_stats div.statsQueries div:hover{
+	background: #d2d6ff;
 }
