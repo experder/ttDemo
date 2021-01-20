@@ -36,6 +36,8 @@ class DemoCss extends Runner {
 		$html[] = self::demoText();
 		$html[] = self::demoForm();
 
+		Page::getInstance()->setFocus(false);
+
 		return $html;
 	}
 
