@@ -249,7 +249,7 @@ div.tt_stats div.statsBtn{
 div.tt_stats div.statsBtn.expand{
 	cursor:zoom-in;
 }
-div.tt_stats > div.statsBtn + div{
+div.tt_stats > div.contentWrapper{
 	display:none;
 }
 div.tt_stats div.statsContent{
