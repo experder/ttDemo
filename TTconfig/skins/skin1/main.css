@@ -14,6 +14,7 @@ body {
 
 div.inner_body {
 	padding: 10px;
+	padding-bottom:40px;
 }
 
 pre {
@@ -240,7 +241,12 @@ div.spinnerContent {
 ==================================================================*/
 
 div.tt_stats{
-	margin-top:15px;
+	position:fixed;
+	bottom:0;
+	left:0;
+	padding:10px;
+	background: rgba(255, 255, 255, .8);
+	border-top-right-radius: 10px;
 }
 div.tt_stats div.statsBtn{
 	display: inline-block;
