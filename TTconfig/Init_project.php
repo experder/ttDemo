@@ -35,6 +35,8 @@ class Init_project {
 		#require_once dirname(__DIR__) . '/TToolbox'.'/core/Autoloader.php';
 		#\tt\core\Autoloader::multipleAutoloader();
 
+		Config::$project_initialized = true;
+
 	}
 
 	/**
@@ -47,6 +49,10 @@ class Init_project {
 
 	public static function initApi() {
 		Config::init_api();
+	}
+
+	public static function initCli() {
+		Config::init_cli();
 	}
 
 }
