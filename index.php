@@ -8,19 +8,19 @@
 
 namespace ttdemo;
 
-use tt\core\Config;
+use tt\config\Init_project;
 use tt\core\page\PG;
 use tt\install\Installer;
 use tt\run\Run;
 use ttdemo\demo\DemoAjax;
 use ttdemo\demo\DemoCss;
 
-#require_once __DIR__.'/TTconfig/Init.php';
+#require_once __DIR__.'/TTconfig/Init_project.php';
 
 require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireInitPointer();
 
-Config::startWeb('ttdemo_index');
+Init_project::initWeb('ttdemo_index');
 
 
 PG::add(" [" . Run::getWebLink(DemoCss::getClass(), 'CSS demo') . "]");
