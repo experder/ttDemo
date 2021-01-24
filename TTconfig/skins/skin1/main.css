@@ -10,11 +10,11 @@ body {
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333;
+	padding-bottom:40px;
 }
 
 div.inner_body {
 	padding: 10px;
-	padding-bottom:40px;
 }
 
 pre {
@@ -27,6 +27,13 @@ hr {
 	border: none;
 	border-top: 1px solid gray;
 	margin: 5px 50px;
+}
+
+/*==================================================================
+    NAVIGATION
+==================================================================*/
+nav{
+	color:red;
 }
 
 /*==================================================================

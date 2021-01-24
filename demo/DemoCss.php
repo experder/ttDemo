@@ -8,6 +8,7 @@
 
 namespace ttdemo\demo;
 
+use tt\core\Config;
 use tt\core\page\Message;
 use tt\core\page\Page;
 use tt\run\Runner;
@@ -37,6 +38,7 @@ class DemoCss extends Runner {
 		$html[] = self::demoForm();
 
 		Page::getInstance()->setFocus(false);
+		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT)."/demo/democss.css");
 
 		return $html;
 	}
