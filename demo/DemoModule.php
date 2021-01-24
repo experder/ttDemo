@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the TT toolbox;
+ * This file is part of the TT toolbox demo;
  * Copyright (C) 2014-2021 Fabian Perder (t2@qnote.de) and contributors
  * TT comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
@@ -13,6 +13,7 @@ use tt\moduleapi\Module;
 class DemoModule implements Module {
 
 	const MODULE_ID = 'demo';
+	private $updateDatabase = null;
 
 	/**
 	 * @inheritdoc
@@ -25,7 +26,10 @@ class DemoModule implements Module {
 	 * @inheritdoc
 	 */
 	public function getUpdateDatabase() {
-		return null;
+		if($this->updateDatabase===null){
+			$this->updateDatabase = new DemoDatabase($this);
+		}
+		return $this->updateDatabase;
 	}
 
 }
