@@ -8,6 +8,7 @@
 
 namespace ttdemo\demo;
 
+use tt\core\Config;
 use tt\core\navigation\NaviEntry;
 use tt\moduleapi\UpdateDatabase;
 
@@ -15,7 +16,9 @@ class DemoDatabase extends UpdateDatabase {
 
 	protected function doUpdate() {
 
-		$this->q(1, NaviEntry::toSql("ttdemo\\demo\\DemoAjax", "Demo Ajax"));
+		$this->q(1, NaviEntry::toSql(DemoAjax::getClass(), "Ajax demo"));
+		$this->q(2, NaviEntry::toSql(DemoCss::getClass(), "CSS demo"));
+		$this->q(3, NaviEntry::toSql("ttdemo_index", "Start", Config::get(Config::HTTP_ROOT).'/index.php'));
 
 	}
 }
