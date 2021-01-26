@@ -16,9 +16,9 @@ class DemoDatabase extends UpdateDatabase {
 
 	protected function doUpdate() {
 
-		$this->q(1, core_navigation::toSql(DemoAjax::getClass(), "Ajax demo"));
-		$this->q(2, core_navigation::toSql(DemoCss::getClass(), "CSS demo"));
-		$this->q(3, core_navigation::toSql("ttdemo_index", "Start", Config::get(Config::HTTP_ROOT).'/index.php'));
+		$this->q(1, core_navigation::toSql_insert(DemoAjax::ROUTE, DemoAjax::TITLE, DemoAjax::getClass()));
+		$this->q(2, core_navigation::toSql_insert(DemoCss::ROUTE, DemoCss::TITLE, DemoCss::getClass()));
+		$this->q(3, core_navigation::toSql_insert("ttdemo_index", "Start", Config::get(Config::HTTP_ROOT).'/index.php', true));
 
 	}
 }

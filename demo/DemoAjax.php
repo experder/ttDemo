@@ -22,6 +22,7 @@ use tt\service\ServiceStrings;
 
 class DemoAjax extends Runner {
 
+	const TITLE = "Ajax demo";
 	const ROUTE = "ttdemo/ajax";
 
 	const HTMLID_key1 = "key1";

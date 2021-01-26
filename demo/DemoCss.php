@@ -26,6 +26,9 @@ use tt\service\Html;
 
 class DemoCss extends Runner {
 
+	const TITLE = "CSS demo";
+	const ROUTE = "ttdemo/css";
+
 	public static function getClass() {
 		return \tt\service\polyfill\Php5::get_class();
 	}
