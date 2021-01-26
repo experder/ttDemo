@@ -17,6 +17,7 @@ div.inner_body {
 	padding: 10px;
 }
 
+div.pre,
 pre {
 	font-family: monospace;
 	margin: 0;
