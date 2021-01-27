@@ -276,20 +276,20 @@ div.tt_stats div.statsContent{
 	padding: 10px 15px;
 }
 
-div.tt_stats div.statsQueries{
+div.tt_stats div.divList{
 	font-family: monospace;
 	white-space: pre-wrap;
 	padding: 0;
 }
-div.tt_stats div.statsQueries div{
+div.tt_stats div.divList div{
 	padding: 0 15px;
 }
-div.tt_stats div.statsQueries div:first-child{
+div.tt_stats div.divList div:first-child{
 	margin-top:10px;
 }
-div.tt_stats div.statsQueries div:last-child{
+div.tt_stats div.divList div:last-child{
 	margin-bottom:10px;
 }
-div.tt_stats div.statsQueries div:hover{
+div.tt_stats div.divList div:hover{
 	background: #d2d6ff;
 }
