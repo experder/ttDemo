@@ -82,7 +82,7 @@ class DemoCss extends Runner {
 
 		$form->addField($ff = new FormfieldCheckbox("checkbox1", "Checkbox1"));
 		$ff->setTooltip("Hint2");
-		$form->addField(new FormfieldCheckbox("checkbox2", "Checkbox2"));
+		$form->addField(new FormfieldCheckbox("checkbox2", "Checkbox2", "foo"));
 
 		$form->addField(new FormfieldRadio("radio", array(
 			new FormfieldRadioOption("value1", "Option1", "Hint3"),
