@@ -14,6 +14,7 @@ use tt\run\ApiResponseHtml;
 use tt\run\Runner;
 use tt\service\Error;
 use tt\service\form\Form;
+use tt\service\form\FormfieldHidden;
 use tt\service\form\FormfieldRadio;
 use tt\service\form\FormfieldRadioOption;
 use tt\service\form\FormfieldText;
@@ -32,14 +33,23 @@ class DemoAjax extends Runner {
 
 	public function runWeb() {
 
-		$form = new Form(null, "", "Ajax Test #1");
-		$form->onSubmit .= (Js::ajaxPostToMessages(null, null, "{
-			class:'".ServiceStrings::escape_value_js(self::PAGEID)."',
-			cmd:'".self::CMD_test1."',
-			foo:'".ServiceStrings::escape_value_js("bar")."',
+		$html = array();
+
+		$html[] = $this->form1();
+		$html[] = $this->form2();
+
+		return $html;
+	}
+
+	private function form2(){
+		$form = new Form(null, "", "Ajax Test #2");
+		$form->onSubmit .= Js::ajaxPostToMessages(null, null, "{
+			class:'" . ServiceStrings::escape_value_js(self::PAGEID) . "',
+			cmd:'" . self::CMD_test1 . "',
+			foo:'" . ServiceStrings::escape_value_js("bar") . "',
 			key1:$('#key1').val(),
 			msg_type:$('input[name=type]:checked').val(),
-		}"))
+		}")
 			. "return false;";
 		$form->addField(new FormfieldText("key1", null, null, true, array("id" => 'key1')));
 		$form->addField(new FormfieldRadio("type", array(
@@ -47,7 +57,18 @@ class DemoAjax extends Runner {
 			new FormfieldRadioOption("error"),
 			new FormfieldRadioOption("ok"),
 		), "info"));
+		return $form;
+	}
 
+	private function form1(){
+		$form = Form::ajaxToMessages(self::CMD_test1, self::PAGEID, "Ajax Test #1");
+		$form->addField(new FormfieldHidden("foo", "bar"));
+		$form->addField(new FormfieldText("key1"));
+		$form->addField(new FormfieldRadio("msg_type", array(
+			new FormfieldRadioOption("info"),
+			new FormfieldRadioOption("error"),
+			new FormfieldRadioOption("ok"),
+		), "info"));
 		return $form;
 	}
 
@@ -57,6 +78,7 @@ class DemoAjax extends Runner {
 				$this->requiredFieldsFromData($data, array('key1', 'foo'));
 				$key1 = $data['key1'];
 				unset($data['key1']);
+				unset($data['tt_radios']);
 
 				$response = "You have sent:<pre>"
 					. "KEY1: " . htmlentities($key1) . "\n"
