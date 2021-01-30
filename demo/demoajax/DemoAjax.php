@@ -89,6 +89,15 @@ class DemoAjax extends Runner {
 			return "dropped!";
 		}
 
+		if ($cmd == 'init') {
+			$file = "../../exclude/init.php";
+			if (file_exists($file)){
+				include $file;
+				return "done.";
+			}
+			return "not done.";
+		}
+
 		return false;
 	}
 
