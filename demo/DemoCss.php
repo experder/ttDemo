@@ -93,6 +93,8 @@ class DemoCss extends Runner {
 			array("placeholder" => "Placeholder")
 		));
 
+		$form->addButton(Html::BUTTON("Option 2"));
+
 		return $form;
 	}
 
