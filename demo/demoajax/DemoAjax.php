@@ -6,7 +6,7 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-namespace ttdemo\demo;
+namespace ttdemo\demo\demoajax;
 
 use tt\core\Config;
 use tt\core\page\Message;
@@ -22,11 +22,7 @@ use tt\service\ServiceStrings;
 
 class DemoAjax extends Runner {
 
-	const TITLE = "Ajax demo";
-	const ROUTE = "ttdemo/ajax";
-
-	const HTMLID_key1 = "key1";
-	const AJAXKEY_key1 = "key1";
+	const PAGEID = "ttdemo/ajax";
 
 	const CMD_test1 = "test1";
 
@@ -38,14 +34,14 @@ class DemoAjax extends Runner {
 
 		$form = new Form(null, "", "Ajax Test #1");
 		$form->onSubmit .= (Js::ajaxPostToMessages(null, null, "{
-			class:'".ServiceStrings::escape_value_js(self::ROUTE)."',
+			class:'".ServiceStrings::escape_value_js(self::PAGEID)."',
 			cmd:'".self::CMD_test1."',
 			foo:'".ServiceStrings::escape_value_js("bar")."',
-			".self::AJAXKEY_key1.":$('#".self::HTMLID_key1."').val(),
+			key1:$('#key1').val(),
 			msg_type:$('input[name=type]:checked').val(),
 		}"))
 			. "return false;";
-		$form->addField(new FormfieldText("key1", null, null, true, array("id" => self::HTMLID_key1)));
+		$form->addField(new FormfieldText("key1", null, null, true, array("id" => 'key1')));
 		$form->addField(new FormfieldRadio("type", array(
 			new FormfieldRadioOption("info"),
 			new FormfieldRadioOption("error"),
@@ -58,9 +54,9 @@ class DemoAjax extends Runner {
 	public function runApi($cmd = null, array $data = array()) {
 		switch ($cmd) {
 			case self::CMD_test1:
-				$this->requiredFieldsFromData($data, array(DemoAjax::AJAXKEY_key1, 'foo'));
-				$key1 = $data[DemoAjax::AJAXKEY_key1];
-				unset($data[DemoAjax::AJAXKEY_key1]);
+				$this->requiredFieldsFromData($data, array('key1', 'foo'));
+				$key1 = $data['key1'];
+				unset($data['key1']);
 
 				$response = "You have sent:<pre>"
 					. "KEY1: " . htmlentities($key1) . "\n"

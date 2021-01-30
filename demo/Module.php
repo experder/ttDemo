@@ -8,9 +8,7 @@
 
 namespace ttdemo\demo;
 
-use tt\moduleapi\Module;
-
-class DemoModule implements Module {
+class Module implements \tt\moduleapi\Module {
 
 	const MODULE_ID = 'demo';
 	private $updateDatabase = null;
@@ -27,7 +25,7 @@ class DemoModule implements Module {
 	 */
 	public function getUpdateDatabase() {
 		if($this->updateDatabase===null){
-			$this->updateDatabase = new DemoDatabase($this);
+			$this->updateDatabase = new UpdateDatabase($this);
 		}
 		return $this->updateDatabase;
 	}

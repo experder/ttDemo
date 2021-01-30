@@ -9,13 +9,12 @@
 namespace tt\api;
 
 use tt\core\Modules;
-use ttdemo\demo\DemoModule;
 
 class RegisterModules extends \tt\core\api_default\RegisterModules {
 
 	public static function registerModules(Modules $modules){
 
-		$modules->register(new DemoModule());
+		$modules->register(new \ttdemo\demo\Module());
 
 	}
 

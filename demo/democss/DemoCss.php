@@ -6,7 +6,7 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-namespace ttdemo\demo;
+namespace ttdemo\demo\democss;
 
 use tt\core\Config;
 use tt\core\page\Message;
@@ -26,8 +26,7 @@ use tt\service\Html;
 
 class DemoCss extends Runner {
 
-	const TITLE = "CSS demo";
-	const ROUTE = "ttdemo/css";
+	const PAGEID = "ttdemo/css";
 
 	public static function getClass() {
 		return \tt\service\polyfill\Php5::get_class();
