@@ -12,7 +12,7 @@ use tt\core\Modules;
 
 class RegisterModules extends \tt\core\api_default\RegisterModules {
 
-	public static function registerModules(Modules $modules){
+	public static function registerModules(Modules $modules) {
 
 		$modules->register(new \ttdemo\demo\Module());
 

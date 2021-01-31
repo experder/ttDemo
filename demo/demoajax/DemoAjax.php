@@ -41,7 +41,7 @@ class DemoAjax extends Runner {
 		return $html;
 	}
 
-	private function form2(){
+	private function form2() {
 		$form = new Form(null, "", "Ajax Test #2");
 		$form->onSubmit .= Js::ajaxPostToMessages(null, null, "{
 			class:'" . ServiceStrings::escape_value_js(self::PAGEID) . "',
@@ -60,7 +60,7 @@ class DemoAjax extends Runner {
 		return $form;
 	}
 
-	private function form1(){
+	private function form1() {
 		$form = Form::ajaxToMessages(self::CMD_test1, self::PAGEID, "Ajax Test #1");
 		$form->addField(new FormfieldHidden("foo", "bar"));
 		$form->addField(new FormfieldText("key1"));
@@ -85,8 +85,8 @@ class DemoAjax extends Runner {
 					. htmlentities(print_r($data, 1))
 					. "</pre>";
 
-				if(Config::get(Config::DEVMODE)){
-					$response = $this->developmentCommands(mb_strtolower($key1))?:$response;
+				if (Config::get(Config::DEVMODE)) {
+					$response = $this->developmentCommands(mb_strtolower($key1)) ?: $response;
 				}
 
 				return new ApiResponseHtml(
@@ -103,7 +103,7 @@ class DemoAjax extends Runner {
 		}
 	}
 
-	private function developmentCommands($cmd){
+	private function developmentCommands($cmd) {
 
 		//Test database initialisation
 		if ($cmd == 'drop') {
@@ -113,7 +113,7 @@ class DemoAjax extends Runner {
 
 		if ($cmd == 'init') {
 			$file = "../../exclude/init.php";
-			if (file_exists($file)){
+			if (file_exists($file)) {
 				include $file;
 				return "done.";
 			}

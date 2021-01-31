@@ -1,25 +1,27 @@
-nav{
-	border:2px dashed red;
-	margin:10px;
+nav {
+	border: 2px dashed red;
+	margin: 10px;
 }
+
 nav:before {
-	content:"nav:";
-	background:red;
+	content: "nav:";
+	background: red;
 }
 
 div.inner_body {
-	border:2px dashed blue;
-	margin:10px;
+	border: 2px dashed blue;
+	margin: 10px;
 }
+
 div.inner_body:before {
-	content:"div.inner_body:";
-	background:blue;
+	content: "div.inner_body:";
+	background: blue;
 }
 
 nav:before,
 div.inner_body:before {
 	font-family: monospace;
-	color:white;
+	color: white;
 	border-radius: 5px;
 	padding: 2px 5px;
 }

@@ -19,7 +19,7 @@ class UpdateDatabase extends \tt\moduleapi\UpdateDatabase {
 
 		$this->q(1, core_navigation::toSql_insert(DemoAjax::PAGEID, "Ajax demo", DemoAjax::getClass()));
 		$this->q(2, core_navigation::toSql_insert(DemoCss::PAGEID, "CSS demo", DemoCss::getClass()));
-		$this->q(3, core_navigation::toSql_insert("ttdemo_index", "Start", Config::get(Config::HTTP_ROOT).'/index.php', true));
+		$this->q(3, core_navigation::toSql_insert("ttdemo_index", "Start", Config::get(Config::HTTP_ROOT) . '/index.php', true));
 
 	}
 }

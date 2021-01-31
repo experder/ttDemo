@@ -40,7 +40,7 @@ class DemoCss extends Runner {
 		$html[] = self::demoForm();
 
 		Page::getInstance()->setFocus(false);
-		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT)."/demo/democss.css");
+		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT) . "/demo/democss.css");
 
 		return $html;
 	}
@@ -62,7 +62,7 @@ class DemoCss extends Runner {
 		$html[] = Html::H3("Header 3");
 		$html[] = Html::H4("Header 4");
 
-		$html[] = Html::A("link", "")." ".Html::A_external("external link", "");
+		$html[] = Html::A("link", "") . " " . Html::A_external("external link", "");
 
 		return $html;
 	}

@@ -24,7 +24,7 @@ class Module implements \tt\moduleapi\Module {
 	 * @inheritdoc
 	 */
 	public function getUpdateDatabase() {
-		if($this->updateDatabase===null){
+		if ($this->updateDatabase === null) {
 			$this->updateDatabase = new UpdateDatabase($this);
 		}
 		return $this->updateDatabase;
