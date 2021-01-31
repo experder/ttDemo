@@ -40,7 +40,7 @@ class DemoCss extends Runner {
 		$html[] = self::demoForm();
 
 		Page::getInstance()->setFocus(false);
-		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT) . "/demo/democss.css");
+		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT) . "/demo/democss/democss.css");
 
 		return $html;
 	}

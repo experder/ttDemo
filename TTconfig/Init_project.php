@@ -18,11 +18,12 @@ class Init_project {
 
 	public static function loadConfig() {
 
+		Config::set(Config::PROJ_TITLE, "TT demo");
+
 		Config::set(Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 
 		Config::set(Config::CFG_DIR, __DIR__);
 
-		#Config::set(Config::CFG_PROJECT_DIR, '#CFG_PROJECT_DIR');
 		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
 
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/init_server.php');
