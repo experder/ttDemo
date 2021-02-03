@@ -11,7 +11,7 @@ body {
 	line-height: 1.5;
 	color: #333;
 	padding-bottom: 40px;
-	margin:0;
+	padding-top: 40px;
 }
 
 div.inner_body {
@@ -49,12 +49,18 @@ a:hover {
     NAVIGATION
 ==================================================================*/
 nav {
-	color: red;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
 }
 
 nav b {
 	color: #6e1920;
 	font-weight: inherit;
+}
+nav ul > li > ul b {
+	color: #f9ffc9;
 }
 
 /* Inspired by: https://www.drweb.de/responsive-navigation-css-dropdown-menue/ */
@@ -78,21 +84,19 @@ nav > ul a {
 	display: block;
 	white-space: nowrap;
 	padding: 10px;
-	background: rgb(195, 35, 45);
 }
 nav ul > li > ul > li span.pseudo_a,
 nav ul > li > ul > li a {
-	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, .8);
 	color: rgb(255, 255, 255);
 }
 
 nav > ul {
 	padding: 0 10px 0 10px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
-	background: rgb(195, 35, 45);
+	background: rgba(255, 255, 255, 0.8);
 }
 
-nav > ul > li > ul,
 nav > ul > li:hover > ul {
 	display: block;
 	position: absolute;
@@ -105,7 +109,6 @@ nav > ul > li > ul > li > ul {
 	display: none;
 }
 
-nav > ul > li > ul > li > ul,
 nav > ul > li > ul > li:hover > ul {
 	display: block;
 	position: absolute;
