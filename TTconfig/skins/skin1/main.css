@@ -48,84 +48,90 @@ a:hover {
 /*==================================================================
     NAVIGATION
 ==================================================================*/
-nav {
+nav.menu {
 	position:fixed;
 	top:0;
 	left:0;
 	width:100%;
 }
 
-nav b {
+nav.menu li.high > a {
 	color: #6e1920;
-	font-weight: inherit;
 }
-nav ul > li > ul b {
-	color: #f9ffc9;
+nav.menu li > ul > li.high > a {
+	color: #feff82;
 }
 
 /* Inspired by: https://www.drweb.de/responsive-navigation-css-dropdown-menue/ */
 
-nav ul {
+nav.menu ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-nav > ul > li {
+nav.menu > ul > li {
 	display: inline-block;
 }
 
-nav > ul > li > ul {
+nav.menu > ul > li > ul {
 	display: none;
 }
 
-nav > ul span.pseudo_a,
-nav > ul a {
+nav.menu > ul span.pseudo_a,
+nav.menu > ul a {
 	display: block;
 	white-space: nowrap;
 	padding: 10px;
 }
-nav ul > li > ul > li span.pseudo_a,
-nav ul > li > ul > li a {
+nav.menu ul > li > ul > li span.pseudo_a,
+nav.menu ul > li > ul > li a {
 	background: rgba(0, 0, 0, .8);
 	color: rgb(255, 255, 255);
 }
 
-nav > ul {
+nav.menu > ul {
 	padding: 0 10px 0 10px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
 	background: rgba(255, 255, 255, 0.8);
 }
 
-nav > ul > li:hover > ul {
+nav.menu > ul > li:hover > ul {
 	display: block;
 	position: absolute;
 }
-nav > ul > li > ul > li {
+nav.menu > ul > li > ul > li {
 	position: relative;
 }
 
-nav > ul > li > ul > li > ul {
+nav.menu > ul > li > ul > li > ul {
 	display: none;
 }
 
-nav > ul > li > ul > li:hover > ul {
+nav.menu > ul > li > ul > li:hover > ul {
 	display: block;
 	position: absolute;
 	left: 100%;
 	top: 0;
 }
 
-nav li > span.pseudo_a:after,
-nav li > a:after {
+nav.menu li > span.pseudo_a:after,
+nav.menu li > a:after {
 	content: " +";
 }
 
-nav li > span.pseudo_a:only-child:after,
-nav li > a:only-child:after {
+nav.menu li > span.pseudo_a:only-child:after,
+nav.menu li > a:only-child:after {
 	content: "";
 }
 
+/*==================================================================
+    BREADCRUMBS
+==================================================================*/
+
+nav.breadcrumbs{
+	/* ... TODO: Breadcrumbs css */
+}
 
 /*==================================================================
     FORMS

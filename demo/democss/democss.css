@@ -2,14 +2,24 @@ body {
 	padding-top: 70px;
 }
 
-nav {
+nav.menu {
 	border: 2px dashed red;
 	margin: 10px;
 }
 
-nav:before {
-	content: "nav:";
+nav.menu:before {
+	content: "nav.menu:";
 	background: red;
+}
+
+nav.breadcrumbs {
+	border: 2px dashed green;
+	margin: 10px;
+}
+
+nav.breadcrumbs:before {
+	content: "nav.breadcrumbs:";
+	background: green;
 }
 
 div.inner_body {
@@ -22,7 +32,8 @@ div.inner_body:before {
 	background: blue;
 }
 
-nav:before,
+nav.breadcrumbs:before,
+nav.menu:before,
 div.inner_body:before {
 	font-family: monospace;
 	color: white;
