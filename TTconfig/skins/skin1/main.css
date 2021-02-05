@@ -55,9 +55,11 @@ nav.menu {
 	width:100%;
 }
 
+nav.menu li.high > span.pseudo_a,
 nav.menu li.high > a {
 	color: #6e1920;
 }
+nav.menu li > ul > li.high > span.pseudo_a,
 nav.menu li > ul > li.high > a {
 	color: #feff82;
 }
