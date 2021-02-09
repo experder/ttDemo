@@ -372,6 +372,12 @@ div.tt_stats div.statsBtn {
 	display: inline-block;
 	margin-right: 5px;
 }
+div.tt_stats div.statsBtn.ajax_stat {
+	color: #00903e;
+}
+div.tt_stats div.statsContent.statsAjax div.postrow{
+	margin-left:50px;
+}
 
 div.tt_stats div.statsBtn.expand {
 	cursor: zoom-in;
