@@ -10,15 +10,16 @@ namespace ttdemo;
 
 use tt\config\Init_project;
 use tt\core\page\PG;
+use tt\coremodule\pages\Start;
 use tt\install\Installer;
+
+require_once __DIR__ . '/TToolbox/run/Runner.php';
+require_once __DIR__ . '/TToolbox/coremodule/pages/Start.php';
 
 require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireInitPointer();
 
-Init_project::initWeb('ttdemo_index');
+Init_project::initWeb(Start::PAGEID);
 
-
-PG::add("Welcome!");
-
-
-PG::deliver();
+$class = new Start();
+PG::add($class->runWeb())->deliver();
