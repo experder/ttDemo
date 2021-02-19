@@ -18,9 +18,9 @@ class UpdateDatabase extends \tt\moduleapi\UpdateDatabase {
 
 	protected function doUpdate() {
 
-		$this->q(1, core_pages::toSql_insert(DemoAjax::PAGEID, core_pages::TYPE_web, "Ajax demo", DemoAjax::getClass()));
-		$this->q(2, core_pages::toSql_insert(DemoCss::PAGEID, core_pages::TYPE_web, "CSS demo", DemoCss::getClass()));
-		$this->q(3, core_pages::toSql_insert(Start::PAGEID, core_pages::TYPE_int, "Start", Config::get(Config::HTTP_ROOT) . '/index.php'));
+		$this->q(1, core_pages::toSql_insert(DemoAjax::PAGEID, core_pages::TYPE_web, "Ajax demo", DemoAjax::getClass(), null, 102));
+		$this->q(2, core_pages::toSql_insert(DemoCss::PAGEID, core_pages::TYPE_web, "CSS demo", DemoCss::getClass(), null, 103));
+		$this->q(3, core_pages::toSql_insert(Start::PAGEID, core_pages::TYPE_int, "Start", Config::get(Config::HTTP_ROOT) . '/index.php', null, 101));
 
 	}
 }
