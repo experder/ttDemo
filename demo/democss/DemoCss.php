@@ -23,6 +23,7 @@ use tt\service\form\FormfieldRadioOption;
 use tt\service\form\FormfieldText;
 use tt\service\form\FormfieldTextarea;
 use tt\service\Html;
+use tt\service\table\Table;
 
 class DemoCss extends Runner {
 
@@ -38,6 +39,7 @@ class DemoCss extends Runner {
 		self::demoAlerts();
 		$html[] = self::demoText();
 		$html[] = self::demoForm();
+		$html[] = self::demoTable();
 
 		Page::getInstance()->setFocus(false);
 		Page::getInstance()->addCss(Config::getChecked(Config::HTTP_ROOT) . "/demo/democss/democss.css");
@@ -46,12 +48,10 @@ class DemoCss extends Runner {
 	}
 
 	private function demoAlerts() {
-
-		Page::addMessageText(Message::TYPE_INFO, "PG::addMessageText(Message::TYPE_INFO, \$message);");
-		Page::addMessageText(Message::TYPE_QUESTION, "PG::addMessageText(Message::TYPE_QUESTION, \$message);");
-		Page::addMessageText(Message::TYPE_ERROR, "PG::addMessageText(Message::TYPE_ERROR, \$message);");
-		Page::addMessageText(Message::TYPE_CONFIRM, "PG::addMessageText(Message::TYPE_CONFIRM, \$message);");
-
+		Page::addMessageText(Message::TYPE_INFO, "Page::addMessageText(Message::TYPE_INFO, \$message);");
+		Page::addMessageText(Message::TYPE_QUESTION, "Page::addMessageText(Message::TYPE_QUESTION, \$message);");
+		Page::addMessageText(Message::TYPE_ERROR, "Page::addMessageText(Message::TYPE_ERROR, \$message);");
+		Page::addMessageText(Message::TYPE_CONFIRM, "Page::addMessageText(Message::TYPE_CONFIRM, \$message);");
 	}
 
 	private function demoText() {
@@ -97,6 +97,16 @@ class DemoCss extends Runner {
 		$form->addButton(Html::BUTTON("Option 2"));
 
 		return $form;
+	}
+
+	private function demoTable() {
+
+		$table = new Table(array(
+			array("one" => "Foo", "two" => "Bar"),
+			array("one" => "Foobar", "two" => "Foofoo"),
+		));
+
+		return $table;
 	}
 
 }
