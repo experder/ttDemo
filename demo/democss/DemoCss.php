@@ -20,6 +20,7 @@ use tt\service\form\FormfieldHidden;
 use tt\service\form\FormfieldPassword;
 use tt\service\form\FormfieldRadio;
 use tt\service\form\FormfieldRadioOption;
+use tt\service\form\FormfieldSelect;
 use tt\service\form\FormfieldText;
 use tt\service\form\FormfieldTextarea;
 use tt\service\Html;
@@ -92,6 +93,15 @@ class DemoCss extends Runner {
 
 		$form->addField(new FormfieldTextarea("textarea", "Textarea", null, true,
 			array("placeholder" => "Placeholder")
+		));
+
+		$form->addField(new FormfieldSelect("select",
+			array(
+				"one" => "bir",
+				"two" => "İki",
+				"three" => "Üç",
+			),
+			"Select"
 		));
 
 		$form->addButton(Html::BUTTON("Option 2"));
