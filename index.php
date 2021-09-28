@@ -8,8 +8,8 @@
 
 namespace ttdemo;
 
+use tt\alias\PG;
 use tt\config\Init_project;
-use tt\core\page\PG;
 use tt\coremodule\pages\Start;
 use tt\install\Installer;
 
