@@ -9,10 +9,10 @@
 namespace ttdemo\demo\demoajax;
 
 use tt\core\Config;
+use tt\core\ErrorDev;
 use tt\core\page\Message;
 use tt\run\ApiResponseHtml;
 use tt\run\Runner;
-use tt\service\Error;
 use tt\service\form\Form;
 use tt\service\form\FormfieldHidden;
 use tt\service\form\FormfieldRadio;
@@ -97,7 +97,7 @@ class DemoAjax extends Runner {
 				);
 				break;
 			default:
-				new Error(get_class($this) . ": Unknown command" . ($cmd === null ? " (null)" : " '$cmd'") . "!");
+				new ErrorDev(get_class($this) . ": Unknown command" . ($cmd === null ? " (null)" : " '$cmd'") . "!");
 				return null;
 				break;
 		}
