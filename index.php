@@ -9,7 +9,7 @@
 namespace ttdemo;
 
 use tt\alias\PG;
-use tt\config\Init_project;
+use ttcfg\Config_project;
 use tt\coremodule\pages\Start;
 use tt\install\Installer;
 
@@ -19,7 +19,7 @@ require_once __DIR__ . '/TToolbox/coremodule/pages/Start.php';
 require_once __DIR__ . '/TToolbox/install/Installer.php';
 Installer::requireInitPointer();
 
-Init_project::initWeb(Start::PAGEID);
+Config_project::initWeb(Start::PAGEID);
 
 $class = new Start();
 PG::add($class->runWeb())->deliver();

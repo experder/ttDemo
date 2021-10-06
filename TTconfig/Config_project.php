@@ -6,15 +6,15 @@
  * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
  */
 
-namespace tt\config;
+namespace ttcfg;
 
 use tt\core\Config;
 
 require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
 
-Init_project::loadConfig();
+Config_project::loadConfig();
 
-class Init_project {
+class Config_project {
 
 	public static function loadConfig() {
 
@@ -26,7 +26,7 @@ class Init_project {
 
 		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
 
-		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/init_server.php');
+		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
 
 		Config::set(Config::DIR_3RDPARTY, dirname(__DIR__) . '/thirdparty');
 
