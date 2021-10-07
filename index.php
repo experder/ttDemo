@@ -17,7 +17,7 @@ require_once __DIR__ . '/TToolbox/run/Runner.php';
 require_once __DIR__ . '/TToolbox/coremodule/pages/Start.php';
 
 require_once __DIR__ . '/TToolbox/install/Installer.php';
-Installer::requireInitPointer();
+Installer::requireConfigPointer();
 
 Config_project::initWeb(Start::PAGEID);
 
