@@ -59,7 +59,15 @@ class Config_project implements Config_project_interface {
 
 	public static function registerModules(Modules $modules) {
 		$modules->register(new \ttdemo\demo\Module());
+		$modules->register(new \myproject\new_module\Module());
 	}
+
+	public static function registerNamespaceRoots(){
+		return array(
+			"myproject"=>dirname(__DIR__).'/TToolbox/demo_project',
+		);
+	}
+
 }
 
 Config_project::loadConfig();
