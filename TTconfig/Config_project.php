@@ -8,12 +8,12 @@
 
 namespace ttcfg;
 
+require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
+require_once dirname(__DIR__) . '/TToolbox' . '/core/Config_project_interface.php';
+
 use tt\core\Config;
 use tt\core\Config_project_interface;
 use tt\core\Modules;
-
-require_once dirname(__DIR__) . '/TToolbox/core/Config.php';
-require_once dirname(__DIR__) . '/TToolbox/core/Config_project_interface.php';
 
 class Config_project implements Config_project_interface {
 
@@ -31,11 +31,11 @@ class Config_project implements Config_project_interface {
 
 		Config::set(Config::DIR_3RDPARTY, dirname(__DIR__) . '/thirdparty');
 
+		Config::set(Config::USE_NEW_NAVIGATION, true);
+
 		//Enable multi Autoloader (Autoloader doesn't terminate on error):
 		#require_once dirname(__DIR__) . '/TToolbox'.'/core/Autoloader.php';
 		#\tt\core\Autoloader::multipleAutoloader();
-
-		Config::set(Config::USE_NEW_NAVIGATION, true);
 
 		Config::$project_initialized = true;
 
