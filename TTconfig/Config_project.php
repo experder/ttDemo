@@ -63,7 +63,7 @@ class Config_project implements Config_project_interface {
 	}
 
 	public static function registerModules(Modules $modules) {
-		#$modules->register(new \ttdemo\demo\Module());
+		#$modules->register2(new \ttdemo\demo\MyModule());
 		$modules->register2(new \myproject\new_module\MyModule());
 	}
 
