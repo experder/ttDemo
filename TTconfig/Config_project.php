@@ -23,15 +23,18 @@ class Config_project implements Config_project_interface {
 
 		Config::set(Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 
-		Config::set(Config::CFG_DIR, __DIR__);
+		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
 
 		Config::set(Config::CFG_DIR_TT, dirname(__DIR__) . '/' . 'TToolbox');
 
-		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
+		Config::set(Config::CFG_DIR, __DIR__);
 
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
 
 		Config::set(Config::DIR_3RDPARTY, dirname(__DIR__) . '/thirdparty');
+
+		//@deprecated
+		#Config::set(Config::CFG_API_DIR, Config::get(Config::CFG_DIR) . '/api');
 
 		Config::set(Config::USE_NEW_NAVIGATION, true);
 
@@ -69,17 +72,6 @@ class Config_project implements Config_project_interface {
 			"myproject" => Config::get(Config::CFG_DIR_TT) . '/demo_project',
 		);
 	}
-
-//	public static function registerModules(Modules $modules) {
-//		$modules->register(new \myproject\new_module\MyModule());
-//	}
-//
-//	public static function registerNamespaceRoots(){
-//		return array(
-//			"myproject"=>dirname(__DIR__).'/TToolbox/demo_project',
-//		);
-//	}
-
 }
 
 Config_project::loadConfig();
