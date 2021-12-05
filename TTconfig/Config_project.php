@@ -25,6 +25,8 @@ class Config_project implements Config_project_interface {
 
 		Config::set(Config::CFG_DIR, __DIR__);
 
+		Config::set(Config::CFG_DIR_TT, dirname(__DIR__) . '/' . 'TToolbox');
+
 		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
 
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
@@ -58,15 +60,25 @@ class Config_project implements Config_project_interface {
 	}
 
 	public static function registerModules(Modules $modules) {
-		$modules->register(new \ttdemo\demo\Module());
-		$modules->register(new \myproject\new_module\Module());
+		#$modules->register(new \ttdemo\demo\Module());
+		$modules->register2(new \myproject\new_module\MyModule());
 	}
 
 	public static function registerNamespaceRoots(){
 		return array(
-			"myproject"=>dirname(__DIR__).'/TToolbox/demo_project',
+			"myproject" => Config::get(Config::CFG_DIR_TT) . '/demo_project',
 		);
 	}
+
+//	public static function registerModules(Modules $modules) {
+//		$modules->register(new \myproject\new_module\MyModule());
+//	}
+//
+//	public static function registerNamespaceRoots(){
+//		return array(
+//			"myproject"=>dirname(__DIR__).'/TToolbox/demo_project',
+//		);
+//	}
 
 }
 
