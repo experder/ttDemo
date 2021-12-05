@@ -72,6 +72,7 @@ class Config_project implements Config_project_interface {
 			"myproject" => Config::get(Config::CFG_DIR_TT) . '/demo_project',
 		);
 	}
+
 }
 
 Config_project::loadConfig();
