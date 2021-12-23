@@ -65,6 +65,7 @@ class Config_project implements Config_project_interface {
 	public static function registerModules(Modules $modules) {
 		#$modules->register2(new \ttdemo\demo\MyModule());
 		$modules->register2(new \myproject\new_module\MyModule());
+		$modules->register2(new \myproject\demo_module\DemoModule());
 	}
 
 	public static function registerNamespaceRoots(){
