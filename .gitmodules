@@ -1,3 +1,6 @@
 [submodule "TToolbox"]
 	path = TToolbox
 	url = https://github.com/experder/TToolbox.git
+[submodule "ttTools1"]
+	path = ttTools1
+	url = https://gitlab.com/experder/tttools1.git
