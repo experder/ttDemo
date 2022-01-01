@@ -33,7 +33,6 @@ class Config_project implements Config_project_interface {
 
 		Config::set(Config::DIR_3RDPARTY, dirname(__DIR__) . '/thirdparty');
 
-		//@deprecated
 		#Config::set(Config::CFG_API_DIR, Config::get(Config::CFG_DIR) . '/api');
 
 		Config::set(Config::USE_NEW_NAVIGATION, true);
@@ -68,7 +67,7 @@ class Config_project implements Config_project_interface {
 		$modules->register2(new \myproject\demo_module\DemoModule());
 	}
 
-	public static function registerNamespaceRoots(){
+	public static function registerNamespaceRoots() {
 		return array(
 			"myproject" => Config::get(Config::CFG_DIR_TT) . '/demo_project',
 		);
