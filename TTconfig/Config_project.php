@@ -23,11 +23,11 @@ class Config_project implements Config_project_interface {
 
 		Config::set(Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
 
-		Config::set(Config::CFG_PROJECT_DIR, dirname(__DIR__));
+		Config::set(Config::DIR_PROJECT_ROOT, dirname(__DIR__));
 
-		Config::set(Config::CFG_DIR_TT, dirname(__DIR__) . '/' . 'TToolbox');
+		Config::set(Config::DIR_TT, dirname(__DIR__) . '/' . 'TToolbox');
 
-		Config::set(Config::CFG_DIR, __DIR__);
+		Config::set(Config::DIR_CFG, __DIR__);
 
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
 
@@ -69,7 +69,7 @@ class Config_project implements Config_project_interface {
 
 	public static function registerNamespaceRoots() {
 		return array(
-			"myproject" => Config::get(Config::CFG_DIR_TT) . '/demo_project',
+			"myproject" => Config::get(Config::DIR_TT) . '/demo_project',
 		);
 	}
 
