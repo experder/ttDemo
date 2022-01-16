@@ -1,27 +1,25 @@
 <?php
-/*
- * This file is part of the TT toolbox demo;
- * Copyright (C) 2014-2022 Fabian Perder (t2@qnote.de) and contributors
- * TT comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under
- * certain conditions. See the GNU General Public License (file 'LICENSE' in the root directory) for more details.
- */
 
 namespace ttcfg;
 
 require_once dirname(__DIR__) . '/TToolbox' . '/core/Config.php';
-require_once dirname(__DIR__) . '/TToolbox' . '/core/Config_project_interface.php';
 
 use tt\core\Config;
-use tt\core\Config_project_interface;
 use tt\core\Modules;
 
-class Config_project implements Config_project_interface {
+/**
+ * Project-specific configuration
+ */
+class ConfigProject {
 
-	public static function loadConfig() {
+	/**
+	 * Pt.1: Executed first. Then: Server-specific config
+	 */
+	public static function ConfigPt1() {
 
-		Config::set(Config::PROJ_TITLE, "TT demo");
+		Config::set(Config::PROJECT_TITLE, "TT demo");
 
-		Config::set(Config::PROJ_NAMESPACE_ROOT, 'ttdemo');
+		Config::set(Config::NAMESPACE_PROJECT_ROOT, 'ttdemo');
 
 		Config::set(Config::DIR_PROJECT_ROOT, dirname(__DIR__));
 
@@ -35,8 +33,6 @@ class Config_project implements Config_project_interface {
 
 		#Config::set(Config::CFG_API_DIR, Config::get(Config::CFG_DIR) . '/api');
 
-		Config::set(Config::USE_NEW_NAVIGATION, true);
-
 		//Enable multi Autoloader (Autoloader doesn't terminate on error):
 		#require_once dirname(__DIR__) . '/TToolbox'.'/core/Autoloader.php';
 		#\tt\core\Autoloader::multipleAutoloader();
@@ -46,24 +42,15 @@ class Config_project implements Config_project_interface {
 	}
 
 	/**
-	 * @param string $pid unique page id
-	 * @return \tt\core\page\Page
+	 * Pt.3: Executed after Server-specific config.
 	 */
-	public static function initWeb($pid) {
-		return Config::init_web($pid);
-	}
+	public static function ConfigPt3() {
 
-	public static function initApi() {
-		Config::init_api();
-	}
-
-	public static function initCli() {
-		Config::init_cli();
 	}
 
 	public static function registerModules(Modules $modules) {
 		#$modules->register2(new \ttdemo\demo\MyModule());
-		$modules->register2(new \myproject\new_module\MyModule());
+		$modules->register2(new \myproject\new_module\ExampleModule());
 		$modules->register2(new \myproject\demo_module\DemoModule());
 	}
 
@@ -74,5 +61,3 @@ class Config_project implements Config_project_interface {
 	}
 
 }
-
-Config_project::loadConfig();
