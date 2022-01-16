@@ -27,33 +27,33 @@ class MyModule extends \tt\core\modules\Module {
 
 	public function doUpdateDatabase() {
 
+//		$route = new core_routes(array(
+//			"route_id" => DemoAjax::PAGEID,
+//			"title" => "Ajax demo",
+//			"parent" => null,
+//			"visible" => 1,
+//			"target" => DemoAjax::getClass(),
+//			"orderby" => 101,
+//		));
+//		$this->q(1, $route->sql_insert());
+//		$route = new core_routes(array(
+//			"route_id" => DemoCss::PAGEID,
+//			"title" => "CSS demo",
+//			"parent" => null,
+//			"visible" => 1,
+//			"target" => DemoCss::getClass(),
+//			"orderby" => 102,
+//		));
+//		$this->q(2, $route->sql_insert());
 		$route = new core_routes(array(
-			"route_id" => DemoAjax::PAGEID,
-			"title" => "Ajax demo",
-			"parent" => null,
-			"visible" => 1,
-			"target" => DemoAjax::getClass(),
-			"orderby" => 101,
-		));
-		$this->q(1, $route->sql_insert());
-		$route = new core_routes(array(
-			"route_id" => DemoCss::PAGEID,
-			"title" => "CSS demo",
-			"parent" => null,
-			"visible" => 1,
-			"target" => DemoCss::getClass(),
-			"orderby" => 102,
-		));
-		$this->q(2, $route->sql_insert());
-		$route = new core_routes(array(
-			"route_id" => Start::PAGEID,
+			"route_id" => 'demostart',
 			"title" => "Start",
 			"parent" => null,
 			"visible" => 1,
 			"target" => Config::get(Config::HTTP_ROOT) . '/index.php',
 			"orderby" => -1,
 		));
-		$this->q(3, $route->sql_insert());
+		$this->q(1, $route->sql_insert());
 
 	}
 
