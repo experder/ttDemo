@@ -31,7 +31,7 @@ class ConfigProject {
 		#\tt\core\Autoloader::multipleAutoloader();
 
 		//Pt.2: Server-specific config.
-		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
+		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/ConfigServer.php');
 
 
 		Config::$project_initialized = true;

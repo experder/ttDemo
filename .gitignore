@@ -12,8 +12,8 @@
 # Others
 # ======
 
-# As the config 'Config_server.php' is server specific it is not shared accross servers by the repository:
-/TTconfig/Config_server.php
+# As the config 'ConfigServer.php' is server specific it is not shared accross servers by the repository:
+/TTconfig/ConfigServer.php
 
 # Only your stuff belongs to your repository:
 # TToolbox will install third-party-packages as they are needed
