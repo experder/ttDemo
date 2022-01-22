@@ -22,20 +22,17 @@ class ConfigProject {
 		Config::set(Config::NAMESPACE_PROJECT_ROOT, 'ttdemo');
 
 		Config::set(Config::DIR_PROJECT_ROOT, dirname(__DIR__));
-
-		Config::set(Config::DIR_TT, dirname(__DIR__) . '/' . 'TToolbox');
-
 		Config::set(Config::DIR_CFG, __DIR__);
-
-		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
-
+		Config::set(Config::DIR_TT, dirname(__DIR__) . '/TToolbox');
 		Config::set(Config::DIR_3RDPARTY, dirname(__DIR__) . '/thirdparty');
-
-		#Config::set(Config::CFG_API_DIR, Config::get(Config::CFG_DIR) . '/api');
 
 		//Enable multi Autoloader (Autoloader doesn't terminate on error):
 		#require_once dirname(__DIR__) . '/TToolbox'.'/core/Autoloader.php';
 		#\tt\core\Autoloader::multipleAutoloader();
+
+		//Pt.2: Server-specific config.
+		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/Config_server.php');
+
 
 		Config::$project_initialized = true;
 
