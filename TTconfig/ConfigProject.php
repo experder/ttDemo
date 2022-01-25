@@ -34,7 +34,7 @@ class ConfigProject {
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/ConfigServer.php');
 
 
-		Config::$project_initialized = true;
+		#Config::$project_initialized = true;
 
 	}
 
@@ -42,6 +42,8 @@ class ConfigProject {
 	 * Pt.3: Executed after Server-specific config.
 	 */
 	public static function ConfigPt3() {
+
+		Config::set(Config::SKIN_NAVI_HEIGHT, '31'/*px*/);
 
 	}
 
