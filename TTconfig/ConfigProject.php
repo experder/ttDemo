@@ -33,9 +33,6 @@ class ConfigProject {
 		//Pt.2: Server-specific config.
 		Config::set(Config::CFG_SERVER_INIT_FILE, __DIR__ . '/ConfigServer.php');
 
-
-		#Config::$project_initialized = true;
-
 	}
 
 	/**
@@ -43,7 +40,20 @@ class ConfigProject {
 	 */
 	public static function ConfigPt3() {
 
+		Config::set(Config::HTTP_TTROOT, Config::get(Config::HTTP_ROOT) . '/TToolbox');
+
+		Config::set(Config::HTTP_SKIN, Config::get(Config::HTTP_TTROOT) . '/demo_project/TTconfig/skins/skin1');
+		#Config::set(Config::HTTP_SKIN, Config::get(Config::HTTP_ROOT) . '/' . basename(Config::get(Config::CFG_DIR)) . '/skins/skin1');
+
+		Config::set(Config::HTTP_3RDPARTY, Config::get(Config::HTTP_ROOT) . '/thirdparty');
+
 		Config::set(Config::SKIN_NAVI_HEIGHT, '31'/*px*/);
+
+		#Config::set(Config::RUN_ALIAS_API, Config::get(Config::HTTP_TTROOT) . '/run_api/');
+		Config::set(Config::RUN_ALIAS_API, Config::get(Config::HTTP_TTROOT) . '/run/');
+
+		Config::set(Config::RUN_ALIAS, '/run/');
+		#Config::set(Config::RUN_ALIAS, Config::get(Config::HTTP_TTROOT) . '/run/?c=');
 
 	}
 
