@@ -10,9 +10,6 @@ namespace ttdemo\demo;
 
 use tt\core\Config;
 use tt\coremodule\dbmodell\core_routes;
-use tt\coremodule\pages\Start;
-use ttdemo\demo\demoajax\DemoAjax;
-use ttdemo\demo\democss\DemoCss;
 
 class MyModule extends \tt\core\modules\Module {
 
@@ -27,24 +24,6 @@ class MyModule extends \tt\core\modules\Module {
 
 	public function doUpdateDatabase() {
 
-//		$route = new core_routes(array(
-//			"route_id" => DemoAjax::PAGEID,
-//			"title" => "Ajax demo",
-//			"parent" => null,
-//			"visible" => 1,
-//			"target" => DemoAjax::getClass(),
-//			"orderby" => 101,
-//		));
-//		$this->q(1, $route->sql_insert());
-//		$route = new core_routes(array(
-//			"route_id" => DemoCss::PAGEID,
-//			"title" => "CSS demo",
-//			"parent" => null,
-//			"visible" => 1,
-//			"target" => DemoCss::getClass(),
-//			"orderby" => 102,
-//		));
-//		$this->q(2, $route->sql_insert());
 		$route = new core_routes(array(
 			"route_id" => 'demostart',
 			"title" => "Start",

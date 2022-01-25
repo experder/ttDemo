@@ -10,6 +10,9 @@ namespace ttdemo\demo\democli;
 
 use tt\run\Runner;
 
+/**
+ * @deprecated 
+ */
 class DemoCliRun extends Runner {
 
 	public function runCli(array $data = array()) {
