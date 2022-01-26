@@ -22,17 +22,27 @@ class MyModule extends \tt\core\modules\Module {
 		return self::moduleId;
 	}
 
+	/**
+	 * @return core_routes[]
+	 */
+	public static function getRoutes(){
+		return array(
+			"1" => new core_routes(array(
+				"route_id" => 'demostart',
+				"title" => "Start",
+				"parent" => null,
+				"visible" => 1,
+				"target" => Config::get(Config::HTTP_ROOT) . '/index.php',
+				"orderby" => -1,
+			)),
+		);
+	}
+
 	public function doUpdateDatabase() {
 
-		$route = new core_routes(array(
-			"route_id" => 'demostart',
-			"title" => "Start",
-			"parent" => null,
-			"visible" => 1,
-			"target" => Config::get(Config::HTTP_ROOT) . '/index.php',
-			"orderby" => -1,
-		));
-		$this->q(1, $route->sql_insert());
+		$routes = self::getRoutes();
+
+		$this->q(1, $routes["1"]->sql_insert());
 
 	}
 
