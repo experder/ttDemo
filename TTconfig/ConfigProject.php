@@ -61,11 +61,13 @@ class ConfigProject {
 		$modules->register2(new \ttdemo\demo\MyModule());
 		$modules->register2(new \myproject\new_module\ExampleModule());
 		$modules->register2(new \myproject\demo_module\DemoModule());
+		$modules->register2(new \tttools1\Tools1Module());
 	}
 
 	public static function registerNamespaceRoots() {
 		return array(
 			"myproject" => Config::get(Config::DIR_TT) . '/demo_project',
+			"tttools1" => Config::get(Config::DIR_PROJECT_ROOT) . '/ttTools1',
 		);
 	}
 
