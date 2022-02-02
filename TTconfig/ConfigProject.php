@@ -52,15 +52,15 @@ class ConfigProject {
 		#Config::set(Config::RUN_ALIAS_API, Config::get(Config::HTTP_TTROOT) . '/run_api/');
 		Config::set(Config::RUN_ALIAS_API, Config::get(Config::HTTP_TTROOT) . '/run/');
 
-		Config::set(Config::RUN_ALIAS, '/run/');
+		#Please put this setting in your ConfigServer.php:
 		#Config::set(Config::RUN_ALIAS, Config::get(Config::HTTP_TTROOT) . '/run/?c=');
 
 	}
 
 	public static function registerModules(Modules $modules) {
-		$modules->register2(new \ttdemo\demo\MyModule());
 		$modules->register2(new \myproject\new_module\ExampleModule());
 		$modules->register2(new \myproject\demo_module\DemoModule());
+		$modules->register2(new \ttdemo\demo\MyModule());
 		$modules->register2(new \tttools1\Tools1Module());
 	}
 

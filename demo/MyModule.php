@@ -42,7 +42,7 @@ class MyModule extends \tt\core\modules\Module {
 
 		$routes = self::getRoutes();
 
-		$this->q(1, $routes["1"]->sql_insert());
+		$this->q(1, $routes["1"]->getSqlInsert());
 
 	}
 
